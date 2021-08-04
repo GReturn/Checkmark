@@ -5,7 +5,7 @@ namespace Checkmark
     {
         static void Main(string[] args)
         {
-            var run = CheckmarkMenu.Run();
+            CheckmarkMenu.Run();
         }
     }
 }
