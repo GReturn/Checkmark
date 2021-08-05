@@ -4,7 +4,12 @@ namespace Checkmark
     {
         public static void Run()
         {
-            
+            /*
+            * Create
+            * Read
+            * Update
+            * Delete
+            */
         }
     }
 }
