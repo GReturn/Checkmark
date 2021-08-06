@@ -1,6 +1,6 @@
 namespace Checkmark.Commands
 {
-    public class Create
+    public partial class Create
     {
         
     }
