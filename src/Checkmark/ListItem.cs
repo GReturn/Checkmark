@@ -1,6 +1,6 @@
 namespace Checkmark
 {
-    public class TodoItem
+    public class ListItem
     {
         public string Todo { get; set; }
         public string PriorityLevel { get; set; }
