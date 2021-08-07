@@ -21,13 +21,20 @@ namespace Checkmark
 
             WriteLine(" Welcome.");
             
-            var input = Prompt.Select("What do you wish to do?", new[] { "Create", "Read", "Update", "Delete", "Exit" });
+            var input = Prompt.Select("What do you wish to do?", 
+            new[] 
+            { 
+                "Create new list", 
+                "Read", 
+                "Update", 
+                "Delete", 
+                "Exit" 
+            });
             
             switch(input.ToUpper())
             {
-                case "CREATE":
-                    WriteLine("Creating...");
-                    Create();
+                case "CREATE NEW LIST":
+                    Commands.CreateNewList();
                     break;
                 case "READ":
                     WriteLine("Reading...");
