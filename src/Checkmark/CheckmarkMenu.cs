@@ -12,10 +12,10 @@ namespace Checkmark
         {
             while(true)
             {    
-                ShowMenu();
+                ShowMainMenu();
             }
         }
-        private static void ShowMenu()
+        private static void ShowMainMenu()
         {
             Write(prefix);
 
