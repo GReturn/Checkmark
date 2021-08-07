@@ -3,11 +3,11 @@ using static System.Console;
 using Sharprompt;
 namespace Checkmark.Commands
 {
-    public partial class Create
+    public class Create
     {
         public Create()
         {
-            
+            ShowCreateMenu();
         }
 
         private void ShowCreateMenu()
