@@ -1,7 +1,6 @@
 using System;
 using static System.Console;
 using Sharprompt;
-using Checkmark.Commands;
 
 namespace Checkmark
 { 
@@ -19,7 +18,7 @@ namespace Checkmark
         {
             Write(prefix);
 
-            WriteLine(" Welcome.");
+            WriteLine(" Welcome to Checkmark");
             
             var input = Prompt.Select("What do you wish to do?", 
             new[] 
@@ -30,25 +29,28 @@ namespace Checkmark
                 "Delete", 
                 "Exit" 
             });
+            Options option = new();
             
             switch(input.ToUpper())
             {
                 case "CREATE NEW LIST":
-                    Commands.CreateNewList();
+                    option.NewList();
                     break;
                 case "READ":
                     WriteLine("Reading...");
                     break;
                 case "UPDATE": 
-                    WriteLine("Updating");
+                    WriteLine("Updating...");
                     break;
                 case "DELETE":
                     WriteLine("Deleting...");
                     break;
                 case "EXIT":
                     Environment.Exit(0);
+                    break;
                 default:
                     WriteLine($"Error: Input invalid => {input}");
+                    break;
             }
         }
     }
