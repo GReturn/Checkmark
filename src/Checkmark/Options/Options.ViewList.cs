@@ -1,10 +1,10 @@
-namespace Checkmark.Options
+namespace Checkmark
 {
     public partial class Options
     {
         public void ViewList()
         {
-
+            System.Console.WriteLine(PATH);
         }
     }
 }

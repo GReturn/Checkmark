@@ -6,7 +6,7 @@ namespace Checkmark
 { 
     public class CheckmarkMenu
     {
-        private const string prefix = ">>"; 
+        private const string prefix = ">>";
         public static void Run()
         {
             while(true)
@@ -24,7 +24,7 @@ namespace Checkmark
             new[] 
             { 
                 "Create new list", 
-                "Read", 
+                "View my lists and tasks", 
                 "Update", 
                 "Delete", 
                 "Exit" 
@@ -36,8 +36,8 @@ namespace Checkmark
                 case "CREATE NEW LIST":
                     option.NewList();
                     break;
-                case "READ":
-                    WriteLine("Reading...");
+                case "VIEW MY LISTS AND TASKS":
+                    option.ViewList();
                     break;
                 case "UPDATE": 
                     WriteLine("Updating...");
