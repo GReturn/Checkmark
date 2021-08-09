@@ -7,7 +7,6 @@ namespace Checkmark
 {
     public partial class Options
     {
-        private var PATH = @"src/Checkmark/LocalStorage/my_data.json";
         public void NewList()
         {
             CreateList();
