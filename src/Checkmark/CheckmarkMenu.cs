@@ -17,9 +17,7 @@ namespace Checkmark
         private static void ShowMainMenu()
         {
             Write(prefix);
-
             WriteLine(" Welcome to Checkmark");
-            
             var input = Prompt.Select("What do you wish to do?", 
             new[] 
             { 
@@ -34,7 +32,7 @@ namespace Checkmark
             switch(input.ToUpper())
             {
                 case "CREATE NEW LIST":
-                    option.NewList();
+                    option.CreateList();
                     break;
                 case "VIEW MY LISTS AND TASKS":
                     option.ViewList();
