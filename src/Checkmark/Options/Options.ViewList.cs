@@ -1,6 +1,7 @@
+using Checkmark.Interfaces;
 namespace Checkmark
 {
-    public partial class Options
+    public partial class Options : IOptions
     {
         public void ViewList()
         {
