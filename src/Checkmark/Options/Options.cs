@@ -2,6 +2,6 @@ namespace Checkmark
 {
     public partial class Options
     {
-        private string PATH = @"src/Checkmark/LocalStorage/my_data.json";
+        private const string DIR = @"LocalStorage";
     }
 }
