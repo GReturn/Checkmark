@@ -48,9 +48,6 @@ namespace Checkmark
                 case "EXIT":
                     Environment.Exit(0);
                     break;
-                default:
-                    WriteLine($"Error: Input invalid => {input}");
-                    break;
             }
         }
     }
