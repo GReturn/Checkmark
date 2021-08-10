@@ -1,6 +1,6 @@
 namespace Checkmark.Interfaces
 {
-    public interface ITaskRepository
+    public interface IOptions
     {
         
     }
