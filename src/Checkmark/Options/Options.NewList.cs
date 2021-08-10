@@ -2,11 +2,10 @@ using System;
 using static System.Console;
 using Sharprompt;
 using System.IO;
-using Checkmark.Interfaces;
 
 namespace Checkmark
 {
-    public partial class Options : IOptions
+    public partial class Options
     {
         public void NewList()
         {
