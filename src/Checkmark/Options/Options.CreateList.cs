@@ -2,30 +2,31 @@ using System;
 using static System.Console;
 using Sharprompt;
 using System.IO;
+using Checkmark;
 
 namespace Checkmark
 {
     public partial class Options
     {
-        public void NewList()
+        public void CreateList()
         {
-            CreateList();
+            ShowCreateMenu();
         }
-        private void CreateList()
+        private void ShowCreateMenu()
         {
             var inputTitle = Prompt.Input<string>("Input title of list");
             var answer = Prompt.Confirm($"Are you sure to create {inputTitle}?");
+            var newList = CheckmarkList;
             
             if (answer)
             {
-                // TODO: Generate txt file/json file. Depends. Watch: https://youtu.be/9mUuJIKq40M
                 GenerateNewFile(inputTitle);
-                WriteLine("new file here");
             }
         }
         private void GenerateNewFile(string title)
         {
-            File.Create(PATH);
+            var newDir = Directory.CreateDirectory(DIR);
+            var newFile = File.Create($"");
         }
     }
 }
