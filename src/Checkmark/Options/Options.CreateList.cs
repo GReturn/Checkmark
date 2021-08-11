@@ -19,8 +19,14 @@ namespace Checkmark
 
             var inputItems = Prompt.List<string>("Please add item(s) to your list");
 
-            var inputPriority = Prompt.Input<string>("Input title of list");
-
+            var inputPriority = Prompt.Select("How important is this?",
+            new[]
+            {
+                "Urgent",
+                "A bit important",
+                "Not important"
+            });
+            WriteLine($"{inputTitle} ({inputPriority}): {inputItems}\n");
 
             var answer = Prompt.Confirm($"Are you sure to create {inputTitle}?");
             
