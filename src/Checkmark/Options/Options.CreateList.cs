@@ -2,7 +2,11 @@ using System;
 using static System.Console;
 using Sharprompt;
 using System.IO;
+//using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Checkmark;
+using System.Threading.Tasks;
 
 namespace Checkmark
 {
@@ -23,7 +27,7 @@ namespace Checkmark
                 GenerateDirectory(DIR);
 
                 // if directory exists, ignore overwrite and proceed:
-                GenerateFile(inputTitle);
+                _ = GenerateFile(inputTitle);
             }
         }
         private static void GenerateDirectory(string directoryName)
@@ -31,14 +35,19 @@ namespace Checkmark
             Directory.CreateDirectory(directoryName);
         }
 
-        private void GenerateFile(string title)
+        private static async Task GenerateFile(string title)
         {
+            var fileName = $"{title}.json";
+            var pathToFileName = Path.Combine(DIR, fileName);
             var newList = new CheckmarkList
             {
                 ListTitle = title,
                 Priority = null,
                 Items = null
             };
+            var jsonFile = JsonSerializer.Serialize(newList);
+            using var fs = File.Create(pathToFileName);
+            await JsonSerializer.SerializeAsync(fs, newList);
         }
     }
 }
