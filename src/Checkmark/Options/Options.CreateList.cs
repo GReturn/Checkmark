@@ -1,12 +1,7 @@
-using System;
-using static System.Console;
-using Sharprompt;
 using System.IO;
-//using Newtonsoft.Json;
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using Checkmark;
 using System.Threading.Tasks;
+using Sharprompt;
 
 namespace Checkmark
 {
