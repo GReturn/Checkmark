@@ -26,13 +26,19 @@ namespace Checkmark
                 GenerateFile(inputTitle);
             }
         }
-        private void GenerateDirectory(string directoryName) => Directory.CreateDirectory(directoryName);
+        private static void GenerateDirectory(string directoryName)
+        {
+            Directory.CreateDirectory(directoryName);
+        }
+
         private void GenerateFile(string title)
         {
-            var newList = new CheckmarkList();
-            newList.ListTitle = title;
-            newList.Priority = null;
-            newList.Items = null;
+            var newList = new CheckmarkList
+            {
+                ListTitle = title,
+                Priority = null,
+                Items = null
+            };
         }
     }
 }
