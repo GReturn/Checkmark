@@ -1,9 +1,9 @@
 using System;
-using static System.Console;
 using Sharprompt;
+using static System.Console;
 
 namespace Checkmark
-{ 
+{
     public class CheckmarkMenu
     {
         public static void Run()

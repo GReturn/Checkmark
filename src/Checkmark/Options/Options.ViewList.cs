@@ -1,7 +1,7 @@
 using System.IO;
+using System.Text;
 using System.Text.Json;
 using static System.Console;
-using System.Text;
 
 namespace Checkmark
 {
