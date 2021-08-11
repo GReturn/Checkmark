@@ -4,6 +4,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Sharprompt;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Checkmark
 {
@@ -15,10 +16,9 @@ namespace Checkmark
         }
         private static void ShowCreateMenu()
         {
+            #region Prompt messages and input acquisition
             var inputTitle = Prompt.Input<string>("Input title of list");
-
             var inputItems = Prompt.List<string>("Please add item(s) to your list");
-
             var inputPriority = Prompt.Select("How important is this?",
             new[]
             {
@@ -26,10 +26,9 @@ namespace Checkmark
                 "A bit important",
                 "Not important"
             });
-            WriteLine($"{inputTitle} ({inputPriority}): {inputItems}\n");
-
             var answer = Prompt.Confirm($"Are you sure to create {inputTitle}?");
-            
+            #endregion
+
             if (answer)
             {
                 // Skips to file creation if directory exists (does not overwrite)
@@ -41,10 +40,11 @@ namespace Checkmark
 
         private static async Task GenerateFile(string title, string priority, IEnumerable<string> items)
         {
-            var fileName = $"{title}.json";
+            var fileName = "my-lists.json";
             var pathToFileName = Path.Combine(DIR, fileName);
             var newList = new CheckmarkList
             {
+                
                 ListTitle = title,
                 Priority = priority,
                 Items = items
