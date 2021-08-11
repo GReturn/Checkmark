@@ -15,7 +15,6 @@ namespace Checkmark
         }
         private static void ShowMainMenu()
         {
-            WriteLine(" Welcome to Checkmark");
             var input = Prompt.Select("What do you wish to do?", 
             new[] 
             { 
