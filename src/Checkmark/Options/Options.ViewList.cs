@@ -7,7 +7,7 @@ namespace Checkmark
         public void ViewList()
         {
             // if (File.GetDirectory(PATH)) {}
-            System.Console.WriteLine(PATH);
+            System.Console.WriteLine(DIR);
         }
         private void ReadList()
         {
