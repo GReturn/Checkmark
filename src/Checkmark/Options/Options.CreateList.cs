@@ -19,15 +19,11 @@ namespace Checkmark
             
             if (answer)
             {
-                GenerateDirectory(DIR);
+                // Skips to file creation if directory exists (does not overwrite):
+                Directory.CreateDirectory(DIR);
 
-                // if directory exists, ignore overwrite and proceed:
                 _ = GenerateFile(inputTitle);
             }
-        }
-        private static void GenerateDirectory(string directoryName)
-        {
-            Directory.CreateDirectory(directoryName);
         }
 
         private static async Task GenerateFile(string title)
@@ -40,7 +36,6 @@ namespace Checkmark
                 Priority = null,
                 Items = null
             };
-            var jsonFile = JsonSerializer.Serialize(newList);
             using var fs = File.Create(pathToFileName);
             await JsonSerializer.SerializeAsync(fs, newList);
         }

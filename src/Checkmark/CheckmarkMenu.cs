@@ -6,7 +6,6 @@ namespace Checkmark
 { 
     public class CheckmarkMenu
     {
-        private const string prefix = ">>";
         public static void Run()
         {
             while(true)
@@ -16,7 +15,6 @@ namespace Checkmark
         }
         private static void ShowMainMenu()
         {
-            Write(prefix);
             WriteLine(" Welcome to Checkmark");
             var input = Prompt.Select("What do you wish to do?", 
             new[] 
@@ -25,7 +23,7 @@ namespace Checkmark
                 "View my lists and tasks", 
                 "Update", 
                 "Delete", 
-                "Exit" 
+                "Exit"
             });
             Options option = new();
             
