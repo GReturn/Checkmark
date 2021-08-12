@@ -6,7 +6,7 @@ using static System.Console;
 
 namespace Checkmark
 {
-    public partial class Options
+    public partial class UI
     {
         /*
             TODO: Add JSON file reading mechanic.

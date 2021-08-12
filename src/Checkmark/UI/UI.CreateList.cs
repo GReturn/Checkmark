@@ -6,7 +6,7 @@ using Sharprompt;
 
 namespace Checkmark
 {
-    public partial class Options
+    public partial class UI
     { 
         public void CreateList()
         {
@@ -30,7 +30,7 @@ namespace Checkmark
             if (answer)
             {
                 /*
-                 * TODO:
+                TODO:
                     1. Check if directory DIR exists, if not, ask user:
                         var inputDIR = Prompt.Input<string>("Select a directory path (folder) for your todo lists");
                         // if directory is unaccessible: UnauthorizedAccessException - https://docs.microsoft.com/en-us/dotnet/api/system.unauthorizedaccessexception

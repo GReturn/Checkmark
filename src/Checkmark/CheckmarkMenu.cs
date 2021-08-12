@@ -24,7 +24,7 @@ namespace Checkmark
                 "Delete", 
                 "Exit"
             });
-            Options option = new();
+            var option = new UI();
             
             switch(input.ToUpper())
             {
