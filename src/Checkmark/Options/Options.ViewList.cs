@@ -1,44 +1,58 @@
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using Sharprompt;
 using static System.Console;
 
 namespace Checkmark
 {
     public partial class Options
     {
+        /*
+            TODO: Add JSON file reading mechanic.
+            
+            Logic I built up so far:
+                * Search directory
+                * Open file
+                * Read file
+                * Deserialize JSON
+        */
+
         public void ViewList()
         {
-            ReadList();
+            if (Directory.Exists(DIR))
+            {
+                ReadList();
+            }
+            var answer = Prompt.Confirm($"You are missing a directory and a file. Proceed to create both?");
+            if (answer)
+            {
+                CreateList();
+            }
         }
         private void ReadList()
         {
-            var listsOfTasks = Deserialize(PATH);
-            WriteLine(listsOfTasks);
+            Deserialize();
+            WriteLine();
         }
 
-        private void ReadFile(string file)
-        {
-            using var fileString = File.OpenRead(PATH);
-            using var streamReader = new StreamReader(fileString, new UTF8Encoding(false));
-            file = streamReader.ReadToEnd();
-        }
-
-        private bool isFileExisting()
-        {
-            return true;
-        }
-
-        private static CheckmarkList Deserialize(string text)
+        private static void Deserialize()
         {
             var options = new JsonSerializerOptions
             {
                 AllowTrailingCommas = true,
                 WriteIndented = true
             };
-            var json = ReadFile(text);
+            var json = ReadFile(PATH);
 
-            return JsonSerializer.Deserialize<CheckmarkList>(json, options);
+            JsonSerializer.Deserialize<CheckmarkList>(json, options);
+        }
+
+        private static StreamReader ReadFile()
+        {
+            using var fileString = File.OpenRead(PATH);
+            using var streamReader = new StreamReader(fileString, new UTF8Encoding(false));
+            return streamReader.ReadToEnd();
         }
     }
 }

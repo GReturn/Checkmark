@@ -4,7 +4,7 @@ namespace Checkmark
 {
     public partial class Options
     {
-        private const string DIR = @"LocalStorage/";
-        private readonly string PATH = Environment.CurrentDirectory;
+        internal const string DIR = @"LocalStorage/";
+        private const string PATH = @"LocalStorage/my-lists.json";
     }
 }

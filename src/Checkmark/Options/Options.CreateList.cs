@@ -29,26 +29,19 @@ namespace Checkmark
 
             if (answer)
             {
+                /*
+                    1. Check if directory DIR exists, if not, ask user:
+                        var inputDIR = Prompt.Input<string>("Select a directory path (folder) for your todo lists");
+                        // if directory is unaccessible: UnauthorizedAccessException - https://docs.microsoft.com/en-us/dotnet/api/system.unauthorizedaccessexception
+                        
+                    2. If directory exists, 
+                 
+                */
                 // Skips to file creation if directory exists (does not overwrite)
-                Directory.CreateDirectory(DIR);
+                //Directory.CreateDirectory(DIR);
 
-                _ = GenerateFile(inputTitle, inputPriority, inputItems);
+                //_ = GenerateFile(inputTitle, inputPriority, inputItems);
             }
-        }
-
-        private static async Task GenerateFile(string title, string priority, IEnumerable<string> items)
-        {
-            var fileName = "my-lists.json";
-            var pathToFileName = Path.Combine(DIR, fileName);
-            var newList = new CheckmarkList
-            {
-                
-                ListTitle = title,
-                Priority = priority,
-                Items = items
-            };
-            using var fs = File.Create(pathToFileName);
-            await JsonSerializer.SerializeAsync(fs, newList);
         }
     }
 }
