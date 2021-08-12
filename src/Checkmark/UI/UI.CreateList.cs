@@ -39,10 +39,6 @@ namespace Checkmark
                         If yes: http://www.mukeshkumar.net/articles/csharp/crud-operation-with-json-file-data-in-csharp
                  
                 */
-                // Skips to file creation if directory exists (does not overwrite)
-                //Directory.CreateDirectory(DIR);
-
-                //_ = GenerateFile(inputTitle, inputPriority, inputItems);
             }
         }
     }

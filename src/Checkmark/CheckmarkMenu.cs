@@ -8,10 +8,7 @@ namespace Checkmark
     {
         public static void Run()
         {
-            while(true)
-            {    
-                ShowMainMenu();
-            }
+            ShowMainMenu();
         }
         private static void ShowMainMenu()
         {
