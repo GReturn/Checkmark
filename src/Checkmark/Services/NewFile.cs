@@ -11,8 +11,7 @@ namespace Checkmark.Services
     {
         private static async Task GenerateFile(string title, string priority, IEnumerable<string> items)
         {
-            var fileName = "my-lists.json";
-            var pathToFileName = Path.Combine(DIR, fileName);
+            var pathToFileName = Path.Combine(DIR, PATH);
 
             var newList = new CheckmarkList
             {

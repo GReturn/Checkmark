@@ -1,10 +1,12 @@
 using System;
+using System.IO;
 
 namespace Checkmark
 {
     public partial class Options
     {
         internal const string DIR = @"C:\Temp\Checkmark\TodoLists";
-        private const string PATH = @"TodoLists\my-lists.json";
+        internal const string PATH = @"TodoLists\my-lists.json";
+        internal string pathToFileName = Path.Combine(DIR, PATH);
     }
 }
