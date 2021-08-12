@@ -1,8 +1,5 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Sharprompt;
+using Checkmark.Services;
 
 namespace Checkmark
 {
@@ -29,6 +26,7 @@ namespace Checkmark
 
             if (answer)
             {
+                var file = NewFile.GenerateFile(inputTitle, inputPriority, inputItems);
                 /*
                 TODO:
                     1. Check if directory DIR exists, if not, ask user:
