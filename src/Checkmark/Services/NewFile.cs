@@ -9,7 +9,7 @@ namespace Checkmark.Services
 {
     public class NewFile
     {
-        private static async Task GenerateFile(string title, string priority, IEnumerable<string> items)
+        static async internal Task GenerateFile(string title, string priority, IEnumerable<string> items)
         {
             var pathToFileName = Path.Combine(DIR, PATH);
 
