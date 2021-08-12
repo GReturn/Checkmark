@@ -16,7 +16,6 @@ obj/
 /obj/
 Migrations/
 /Migrations/
-/LocalStorage/
 *.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
