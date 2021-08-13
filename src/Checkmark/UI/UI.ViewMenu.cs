@@ -17,42 +17,5 @@ namespace Checkmark
                 * Read file
                 * Deserialize JSON
         */
-
-        public static void ViewList()
-        {
-            if (Directory.Exists(DIR))
-            {
-                ReadList();
-            }
-            var answer = Prompt.Confirm($"You are missing a directory and a file. Proceed to create both?");
-            if (answer)
-            {
-                CreateMenu();
-            }
-        }
-        private static void ReadList()
-        {
-            Deserialize();
-            WriteLine();
-        }
-
-        private static void Deserialize()
-        {
-            var options = new JsonSerializerOptions
-            {
-                AllowTrailingCommas = true,
-                WriteIndented = true
-            };
-            var json = ReadFile(PATH);
-
-            JsonSerializer.Deserialize<CheckmarkListConfig>(json, options);
-        }
-
-        private static StreamReader ReadFile()
-        {
-            using var fileString = File.OpenRead(PATH);
-            using var streamReader = new StreamReader(fileString, new UTF8Encoding(false));
-            return streamReader.ReadToEnd();
-        }
     }
 }

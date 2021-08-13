@@ -18,7 +18,7 @@ namespace Checkmark
                 "Create new list", 
                 "View my lists and tasks", 
                 "Update", 
-                "Delete", 
+                "Delete",
                 "Exit"
             });
             
@@ -41,9 +41,5 @@ namespace Checkmark
                     break;
             }
         }
-        //private static void SetupMenu()
-        //{
-        //    var shouldCreateConfig = Prompt.Confirm("Before you start ");
-        //}
     }
 }
