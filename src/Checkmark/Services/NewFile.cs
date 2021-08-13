@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
-using static Checkmark.UI;
 
 namespace Checkmark.Services
 {
@@ -11,7 +10,7 @@ namespace Checkmark.Services
     {
         static async internal Task GenerateFile(string title, string priority, IEnumerable<string> items)
         {
-            var pathToFileName = Path.Combine(DIR, PATH);
+            var pathToFileName = Path.Combine(UserSettings.DIR, UserSettings.PATH);
 
             var newList = new CheckmarkList
             {
@@ -37,4 +36,3 @@ namespace Checkmark.Services
         }
     }
 }
-
