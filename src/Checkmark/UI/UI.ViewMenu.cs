@@ -18,7 +18,7 @@ namespace Checkmark
                 * Deserialize JSON
         */
 
-        public void ViewList()
+        public static void ViewList()
         {
             if (Directory.Exists(DIR))
             {
@@ -30,7 +30,7 @@ namespace Checkmark
                 CreateList();
             }
         }
-        private void ReadList()
+        private static void ReadList()
         {
             Deserialize();
             WriteLine();
