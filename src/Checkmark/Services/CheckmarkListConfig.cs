@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Checkmark
 {
-    public class CheckmarkList
+    public class CheckmarkListConfig
     {
         [JsonPropertyName("ListTitle")]
         public string ListTitle { get; set; }
