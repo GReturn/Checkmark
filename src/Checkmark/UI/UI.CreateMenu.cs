@@ -3,9 +3,9 @@ using Checkmark.Services;
 
 namespace Checkmark
 {
-    public partial class UI
+    public static partial class UI
     { 
-        public void CreateList()
+        public static void CreateList()
         {
             ShowCreateMenu();
         }
