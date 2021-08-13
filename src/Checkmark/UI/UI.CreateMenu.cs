@@ -26,7 +26,7 @@ namespace Checkmark
 
             if (answer)
             {
-                var file = NewFile.GenerateFile(inputTitle, inputPriority, inputItems);
+                var file = NewFile.GenerateTodoListFile(inputTitle, inputPriority, inputItems);
                 /*
                 TODO:
                     1. Check if directory DIR exists, if not, ask user:
