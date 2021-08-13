@@ -8,10 +8,8 @@ namespace Checkmark.Services
 {
     public static class NewFile
     {
-        static async internal Task GenerateFile(string title, string priority, IEnumerable<string> items)
+        static internal Task GenerateFile(string title, string priority, IEnumerable<string> items)
         {
-            var pathToFileName = Path.Combine(UserSettingsConfig.DIR, UserSettingsConfig.PATH);
-
             var newList = new CheckmarkListConfig
             {
                 ListTitle = title,
@@ -26,7 +24,7 @@ namespace Checkmark.Services
                 WriteIndented = true
             };
             using var fs = File.Create(pathToFileName);
-            await JsonSerializer.SerializeAsync(fs, completeList, options);
+            JsonSerializer.SerializeAsync(fs, completeList, options);
         }
         private static ArrayList AssignListDataToArrayList(CheckmarkListConfig checkmarkList)
         {
