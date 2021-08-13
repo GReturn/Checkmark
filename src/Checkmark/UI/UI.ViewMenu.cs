@@ -45,7 +45,7 @@ namespace Checkmark
             };
             var json = ReadFile(PATH);
 
-            JsonSerializer.Deserialize<CheckmarkList>(json, options);
+            JsonSerializer.Deserialize<CheckmarkListConfig>(json, options);
         }
 
         private static StreamReader ReadFile()

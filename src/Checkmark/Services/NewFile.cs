@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Checkmark.Services
 {
-    public class NewFile
+    public static class NewFile
     {
         static async internal Task GenerateFile(string title, string priority, IEnumerable<string> items)
         {
-            var pathToFileName = Path.Combine(UserSettings.DIR, UserSettings.PATH);
+            var pathToFileName = Path.Combine(UserSettingsConfig.DIR, UserSettingsConfig.PATH);
 
-            var newList = new CheckmarkList
+            var newList = new CheckmarkListConfig
             {
                 ListTitle = title,
                 Priority = priority,
@@ -28,7 +28,7 @@ namespace Checkmark.Services
             using var fs = File.Create(pathToFileName);
             await JsonSerializer.SerializeAsync(fs, completeList, options);
         }
-        private static ArrayList AssignListDataToArrayList(CheckmarkList checkmarkList)
+        private static ArrayList AssignListDataToArrayList(CheckmarkListConfig checkmarkList)
         {
             ArrayList arrayList = new();
             arrayList.Add(checkmarkList);

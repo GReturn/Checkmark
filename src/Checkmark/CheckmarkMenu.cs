@@ -41,5 +41,9 @@ namespace Checkmark
                     break;
             }
         }
+        //private static void SetupMenu()
+        //{
+        //    var shouldCreateConfig = Prompt.Confirm("Before you start ");
+        //}
     }
 }
