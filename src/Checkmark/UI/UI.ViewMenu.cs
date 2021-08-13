@@ -27,7 +27,7 @@ namespace Checkmark
             var answer = Prompt.Confirm($"You are missing a directory and a file. Proceed to create both?");
             if (answer)
             {
-                CreateList();
+                CreateMenu();
             }
         }
         private static void ReadList()

@@ -5,7 +5,7 @@ namespace Checkmark
 {
     public static partial class UI
     { 
-        public static void CreateList()
+        public static void CreateMenu()
         {
             ShowCreateMenu();
         }

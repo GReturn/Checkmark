@@ -25,7 +25,7 @@ namespace Checkmark
             switch(input.ToUpper())
             {
                 case "CREATE NEW LIST":
-                    UI.CreateList();
+                    UI.CreateMenu();
                     break;
                 case "VIEW MY LISTS AND TASKS":
                     UI.ViewList();
