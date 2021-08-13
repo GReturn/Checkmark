@@ -8,7 +8,7 @@ namespace Checkmark.Services
 {
     public static class NewFile
     {
-        static internal Task GenerateFile(string title, string priority, IEnumerable<string> items)
+        static internal Task GenerateTodoListFile(string title, string priority, IEnumerable<string> items)
         {
             var newList = new CheckmarkListConfig
             {
