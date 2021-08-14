@@ -6,7 +6,12 @@ namespace Checkmark
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Checkmark");
-            CheckmarkMenu.Run();
+            Setup.ShowSetupMenu();
+
+            while (true)
+            {
+                CheckmarkMenu.Run();
+            }
         }
     }
 }

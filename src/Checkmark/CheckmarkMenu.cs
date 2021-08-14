@@ -4,14 +4,11 @@ using static System.Console;
 
 namespace Checkmark
 {
-    public class CheckmarkMenu
+    public static class CheckmarkMenu
     {
         public static void Run()
         {
-            while(true)
-            {    
-                ShowMainMenu();
-            }
+            ShowMainMenu();
         }
         private static void ShowMainMenu()
         {
@@ -21,18 +18,17 @@ namespace Checkmark
                 "Create new list", 
                 "View my lists and tasks", 
                 "Update", 
-                "Delete", 
+                "Delete",
                 "Exit"
             });
-            Options option = new();
             
             switch(input.ToUpper())
             {
                 case "CREATE NEW LIST":
-                    option.CreateList();
+                    UI.CreateMenu();
                     break;
                 case "VIEW MY LISTS AND TASKS":
-                    option.ViewList();
+                    UI.ViewList();
                     break;
                 case "UPDATE": 
                     WriteLine("Updating...");

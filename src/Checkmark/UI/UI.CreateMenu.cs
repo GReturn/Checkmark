@@ -1,14 +1,11 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Sharprompt;
+using Checkmark.Services;
 
 namespace Checkmark
 {
-    public partial class Options
+    public static partial class UI
     { 
-        public void CreateList()
+        public static void CreateMenu()
         {
             ShowCreateMenu();
         }
@@ -29,18 +26,17 @@ namespace Checkmark
 
             if (answer)
             {
+                var file = NewFile.GenerateTodoListFile(inputTitle, inputPriority, inputItems);
                 /*
+                TODO:
                     1. Check if directory DIR exists, if not, ask user:
                         var inputDIR = Prompt.Input<string>("Select a directory path (folder) for your todo lists");
                         // if directory is unaccessible: UnauthorizedAccessException - https://docs.microsoft.com/en-us/dotnet/api/system.unauthorizedaccessexception
                         
-                    2. If directory exists, 
+                    2. If directory exists, file should exist, if not create file.
+                        If yes: http://www.mukeshkumar.net/articles/csharp/crud-operation-with-json-file-data-in-csharp
                  
                 */
-                // Skips to file creation if directory exists (does not overwrite)
-                //Directory.CreateDirectory(DIR);
-
-                //_ = GenerateFile(inputTitle, inputPriority, inputItems);
             }
         }
     }
