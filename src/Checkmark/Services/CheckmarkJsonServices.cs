@@ -10,11 +10,11 @@ namespace Checkmark.Services
             WriteIndented = true,
         };
 
-        public static string SerializeList(CheckmarkListTemplateJson json)
+        public static string Serialize(CheckmarkListTemplateJson json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
-        public static CheckmarkListTemplateJson DeserializeList(string json)
+        public static CheckmarkListTemplateJson Deserialize(string json)
         {
             return JsonSerializer.Deserialize<CheckmarkListTemplateJson>(json, jsonSerializerOptions);
         }
