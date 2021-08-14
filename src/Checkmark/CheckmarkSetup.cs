@@ -1,6 +1,7 @@
 ﻿using System;
 using Sharprompt;
 using System.IO;
+using Checkmark.Services;
 
 namespace Checkmark
 {
@@ -8,6 +9,9 @@ namespace Checkmark
     {
         public static void ShowSetupMenu()
         {
+            /*
+             *  Messy code here. Optimize later.
+             */
             var ready = Prompt.Confirm("Before you start writing your todo lists, please finish the setup.");
 
             while (ready)
@@ -18,12 +22,14 @@ namespace Checkmark
                 {
                     userDirectory += @"\Checkmark";
 
-                    Directory.CreateDirectory(userDirectory);
-                    using (var fs = File.Create(Path.Combine(userDirectory, "my-list.json")))
+                    var checkmarkConfig = new CheckmarkConfig
                     {
-                        fs.Write();
-                    }
+                        DIR = userDirectory
+                    };
+                    var pathToFile = checkmarkConfig.CheckmarkConfigPath;
+                    var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
 
+                    CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR,pathToFile,json);
                 }
                 else
                 {
