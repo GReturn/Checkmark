@@ -2,7 +2,8 @@
 
 namespace Checkmark.Services
 {
-    class CheckmarkFileServices
+    public class CheckmarkFileServices
     {
+
     }
 }
