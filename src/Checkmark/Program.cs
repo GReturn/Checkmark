@@ -9,7 +9,7 @@ namespace Checkmark
         {
             Console.WriteLine("Welcome to Checkmark");
 
-            if (!File.Exists(CheckmarkConfig.PATH))
+            if (!File.Exists(CheckmarkConfig.CheckmarkConfigPath))
             {
                 CheckmarkSetup.ShowSetupMenu();
             }

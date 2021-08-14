@@ -26,7 +26,7 @@ namespace Checkmark
                     {
                         DIR = userDirectory
                     };
-                    var pathToFile = checkmarkConfig.CheckmarkConfigPath;
+                    var pathToFile = CheckmarkConfig.CheckmarkConfigPath;
                     var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
 
                     CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR,pathToFile,json);
