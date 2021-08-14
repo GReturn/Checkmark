@@ -1,29 +1,35 @@
 ﻿using System.IO;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
+using Checkmark.Templates;
 
 namespace Checkmark.Services
 {
-    public class CheckmarkFileServices
+    public static class CheckmarkFileServices
     {
-        public void CreateFile(string file)
+        public static void CreateJsonFile(string directory, string path, string json)
         {
-            File.Create(file);
+            Directory.CreateDirectory(directory);
+
+            using (var fs = File.Create(path))
+            {
+                File.WriteAllText(path, json);
+            }
+                
         }
 
-        public void WriteToFile(string file)
+        public static void WriteToFile(string file)
         {
 
         }
-        public void Save()
+        public static void Save()
         {
 
         }
         
 
 
-        public static async Task<CheckmarkListTemplateJson> ReadListJson(string json)
+        public static async Task<CheckmarkListTemplateJson> ReadJsonFile(string json)
         {
             var jsonFile = string.Empty;
 
@@ -31,7 +37,7 @@ namespace Checkmark.Services
             using (var streamReader = new StreamReader(fileString, new UTF8Encoding(false)))
                 jsonFile = await streamReader.ReadToEndAsync().ConfigureAwait(false);
 
-            return JsonSerializer.Deserialize<CheckmarkListTemplateJson>(jsonFile);
+            return CheckmarkJsonServices.Deserialize(jsonFile);
         }
     }
 }
