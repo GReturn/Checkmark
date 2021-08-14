@@ -23,7 +23,7 @@ namespace Checkmark.UI
                 Items = newListItems
             };
 
-            CheckmarkJsonServices.SerializeList(newList);
+            CheckmarkJsonServices.Serialize(newList);
         }
     }
 }
