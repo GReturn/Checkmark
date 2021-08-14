@@ -6,24 +6,24 @@ namespace Checkmark.Services
 {
     public class UserSettingsConfig
     {
-        [JsonPropertyName("Directory")]
-        public string DIR { get; set; }
-        [JsonPropertyName("Filename")]
-        public string FILENAME { get; set; }
-        [JsonPropertyName("PATH")]
-        public string PathToFileName { get; set; }
-        //private bool DoesUserDirectoryExists(string directory)
-        //{
-        //    if (Directory.Exists(directory))
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
-        //private static UserSettings DeserializeUserSettingsJson(string jsonUserSettingsFile)
-        //{
-        //    return JsonSerializer.Deserialize<UserSettings>(jsonUserSettingsFile);
-        //}
+        public class ListFileLocation
+        {
+            [JsonPropertyName("Directory")]
+            public string DIR { get; set; }
+            [JsonPropertyName("Filename")]
+            public string FILENAME { get; set; }
+            [JsonPropertyName("PATH")]
+            public string PathToListFileName { get; set; }
+        }
+        public class ConfigFileLocation
+        {
+            [JsonPropertyName("Directory")]
+            public static string DIR { get; } = "/LocalStorage/";
+            [JsonPropertyName("Filename")]
+            public static string FILENAME { get; } = "my-config.json";
+            [JsonPropertyName("Path")]
+            public static string PathToFileName { get; } = Path.Combine(DIR, FILENAME);
+        }
 
         //private static void Deserialize()
         //{

@@ -23,8 +23,8 @@ namespace Checkmark.Services
                 AllowTrailingCommas = true,
                 WriteIndented = true
             };
-            using var fs = File.Create(pathToFileName);
-            JsonSerializer.SerializeAsync(fs, completeList, options);
+            using var fs = File.Create(UserSettingsConfig.ConfigFileLocation.PathToFileName);
+            return JsonSerializer.SerializeAsync(fs, completeList, options);
         }
         private static ArrayList AssignListDataToArrayList(CheckmarkListConfig checkmarkList)
         {

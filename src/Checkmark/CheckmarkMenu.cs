@@ -28,7 +28,7 @@ namespace Checkmark
                     UI.CreateMenu();
                     break;
                 case "VIEW MY LISTS AND TASKS":
-                    UI.ViewList();
+                    WriteLine("Viewing...");
                     break;
                 case "UPDATE": 
                     WriteLine("Updating...");
