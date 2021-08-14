@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Checkmark.Templates;
 
 namespace Checkmark.Services
 {
@@ -17,6 +18,16 @@ namespace Checkmark.Services
         public static CheckmarkListTemplateJson Deserialize(string json)
         {
             return JsonSerializer.Deserialize<CheckmarkListTemplateJson>(json, jsonSerializerOptions);
+        }
+
+
+        public static string Serialize(CheckmarkConfig json)
+        {
+            return JsonSerializer.Serialize(json, jsonSerializerOptions);
+        }
+        public static CheckmarkConfig Deserialize<CheckmarkConfig>(string json)
+        {
+            return JsonSerializer.Deserialize<CheckmarkConfig>(json, jsonSerializerOptions);
         }
     }
 }
