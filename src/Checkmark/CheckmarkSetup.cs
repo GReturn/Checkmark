@@ -14,31 +14,35 @@ namespace Checkmark
              */
             var ready = Prompt.Confirm("Before you start writing your todo lists, please finish the setup.");
 
-            while (ready)
+            Input:
+            if (ready)
             {
                 var userDirectory = Prompt.Input<string>(@"Where do you want to save your lists? e.g. C:\Temp");
 
                 if (Directory.Exists(userDirectory))
                 {
-                    userDirectory += @"\Checkmark";
+                    userDirectory += @"\Checkmark\";
 
                     var checkmarkConfig = new CheckmarkConfig
                     {
                         DIR = userDirectory
                     };
-                    var pathToFile = CheckmarkConfig.CheckmarkConfigPath;
                     var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
 
-                    CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR,pathToFile,json);
+                    CheckmarkFileServices.CreateJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,CheckmarkConfig.CheckmarkConfigFileName,json);
                 }
                 else
                 {
-                    var message = "Directory not found. ";
-                    throw new DirectoryNotFoundException(message);
+                    var message = "Directory not found.";
+                    Console.WriteLine(message);
+                    goto Input;
                 }
             }
-            Console.WriteLine("Set-up process could not finish.");
-            Environment.Exit(0);
+            else
+            {
+                Console.WriteLine("Set-up process could not finish.");
+                Environment.Exit(0);
+            }
         }
     }
 }
