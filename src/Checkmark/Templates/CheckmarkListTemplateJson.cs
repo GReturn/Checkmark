@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
-    public class CheckmarkListTemplateJson
+    public class CheckmarkListTemplateJson : ArrayList
     {
         [JsonPropertyName("Title")]
         public string Title { get; set; }

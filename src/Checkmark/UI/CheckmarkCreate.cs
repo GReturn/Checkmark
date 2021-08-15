@@ -1,5 +1,7 @@
 ﻿using Sharprompt;
 using Checkmark.Services;
+using Checkmark.Templates;
+using System.Collections;
 
 namespace Checkmark.UI
 {
@@ -22,8 +24,13 @@ namespace Checkmark.UI
                 Priority = newListPriority,
                 Items = newListItems
             };
+            var arrayList = new ArrayList();
+            arrayList.Add(newList);
 
-            CheckmarkJsonServices.Serialize(newList);
+            var json = CheckmarkJsonServices.Serialize(arrayList);
+            var configFile = CheckmarkFileServices.ReadConfigFileJson();
+            var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
+            CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME,json);
         }
     }
 }

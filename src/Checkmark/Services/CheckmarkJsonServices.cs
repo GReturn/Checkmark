@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Checkmark.Templates;
+using System.Collections;
 
 namespace Checkmark.Services
 {
@@ -11,7 +12,7 @@ namespace Checkmark.Services
             WriteIndented = true,
         };
 
-        public static string Serialize(CheckmarkListTemplateJson json)
+        public static string Serialize(ArrayList json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
