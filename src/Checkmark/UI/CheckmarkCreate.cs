@@ -18,16 +18,16 @@ namespace Checkmark.UI
                     "Not important" 
                 });
 
-            var newList = new CheckmarkListTemplateJson
+            var newList = new CheckmarkItemListTemplateJson
             {
                 Title = newListName,
                 Priority = newListPriority,
                 Items = newListItems
             };
-            var arrayList = new ArrayList();
-            arrayList.Add(newList);
+            //var arrayList = new ArrayList();
+            //arrayList.Add(newList);
 
-            var json = CheckmarkJsonServices.Serialize(arrayList);
+            var json = CheckmarkJsonServices.Serialize(newList);
             var configFile = CheckmarkFileServices.ReadConfigFileJson();
             var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
             CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME,json);
