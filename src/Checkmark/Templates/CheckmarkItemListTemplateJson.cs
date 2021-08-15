@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
-    public class CheckmarkListTemplateJson : ArrayList
+    public class CheckmarkItemListTemplateJson
     {
         [JsonPropertyName("Title")]
         public string Title { get; set; }
@@ -12,5 +12,9 @@ namespace Checkmark.Templates
         public string Priority { get; set; }
         [JsonPropertyName("Items")]
         public IEnumerable<string> Items { get; set; }
+    }
+    public class CheckmarkTodoList
+    {
+        public IList<CheckmarkItemListTemplateJson> Todos { get; set; }
     }
 }
