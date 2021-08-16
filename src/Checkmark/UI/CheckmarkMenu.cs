@@ -5,7 +5,7 @@ using Checkmark.UI;
 
 namespace Checkmark
 {
-    public static class CheckmarkMenu
+    static internal class CheckmarkMenu
     {
         public static void Run()
         {
