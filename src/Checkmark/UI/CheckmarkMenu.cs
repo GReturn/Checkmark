@@ -1,6 +1,7 @@
 using System;
 using Sharprompt;
 using static System.Console;
+using Checkmark.UI;
 
 namespace Checkmark
 {
@@ -25,10 +26,10 @@ namespace Checkmark
             switch(input.ToUpper())
             {
                 case "CREATE NEW LIST":
-                    UI.CreateMenu();
+                    CheckmarkCreate.ShowCreateMenu();
                     break;
                 case "VIEW MY LISTS AND TASKS":
-                    UI.ViewList();
+                    WriteLine("Viewing...");
                     break;
                 case "UPDATE": 
                     WriteLine("Updating...");
