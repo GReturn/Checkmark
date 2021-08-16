@@ -13,8 +13,9 @@ namespace Checkmark.Templates
         [JsonPropertyName("Items")]
         public IEnumerable<string> Items { get; set; }
     }
-    public class CheckmarkTodoList
+    // DO THIS LATER AFTER COMPLETING VIEW FEATURE:
+    public class CheckmarkList : ArrayList
     {
-        public IList<CheckmarkItemListTemplateJson> Todos { get; set; }
+        public IList<CheckmarkItemListTemplateJson> ListTitle { get; set; }
     }
 }
