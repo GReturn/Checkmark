@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace Checkmark.UI
 {
-    public class CheckmarkCreate
+    static internal class CheckmarkCreate
     {
         public static void ShowCreateMenu()
         {
@@ -17,17 +17,22 @@ namespace Checkmark.UI
                     "A bit important", 
                     "Not important" 
                 });
+            var confirm = Prompt.Confirm($"Proceed to create list: {newListName}?");
 
-            var newList = new CheckmarkItemListTemplateJson
+            if (confirm)
             {
-                Title = newListName,
-                Priority = newListPriority,
-                Items = newListItems
-            };
-            //var arrayList = new ArrayList();
-            //arrayList.Add(newList);
+                var newList = new CheckmarkItemListTemplateJson
+                {
+                    Title = newListName,
+                    Priority = newListPriority,
+                    Items = newListItems
+                };
+                //var arrayList = new ArrayList();
+                //arrayList.Add(newList);
 
-            CheckmarkListServices.AddList(newList);
+                CheckmarkListServices.AddList(newList);
+            }
+            
         }
     }
 }
