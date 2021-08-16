@@ -12,6 +12,7 @@ namespace Checkmark.Services
             WriteIndented = true,
         };
 
+        #region JSON services for the user's Checkmark list
         public static string Serialize(CheckmarkItemListTemplateJson json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
@@ -20,8 +21,9 @@ namespace Checkmark.Services
         {
             return JsonSerializer.Deserialize<CheckmarkItemListTemplateJson>(json, jsonSerializerOptions);
         }
+        #endregion
 
-
+        #region JSON services for Checkmark files configuration
         public static string Serialize(CheckmarkConfig json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
@@ -30,5 +32,6 @@ namespace Checkmark.Services
         {
             return JsonSerializer.Deserialize<CheckmarkConfig>(json, jsonSerializerOptions);
         }
+        #endregion
     }
 }
