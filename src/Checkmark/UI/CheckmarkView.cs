@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Sharprompt;
 
 namespace Checkmark.UI
 {
@@ -10,7 +6,12 @@ namespace Checkmark.UI
     {
         public static void ShowViewMenu()
         {
-
+            var viewListChoice = Prompt.Select("How do you want to view your lists?",
+                new[] {
+                    "In a table", // TODO: Feature - Add ConsoleTables: https://github.com/khalidabuhakmeh/ConsoleTables
+                    "A bit important",
+                    "Not important"
+                });
         }
     }
 }
