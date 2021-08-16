@@ -9,9 +9,12 @@ namespace Checkmark.Services
 {
     public class CheckmarkListServices
     {
-        public void AddList(CheckmarkItemListTemplateJson list)
+        public static void AddList(CheckmarkItemListTemplateJson list)
         {
-
+            var json = CheckmarkJsonServices.Serialize(list);
+            var configFile = CheckmarkFileServices.ReadConfigFileJson();
+            var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
+            CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
         }
         public void ReadList()
         {

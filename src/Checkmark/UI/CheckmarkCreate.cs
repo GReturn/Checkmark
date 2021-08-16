@@ -27,10 +27,7 @@ namespace Checkmark.UI
             //var arrayList = new ArrayList();
             //arrayList.Add(newList);
 
-            var json = CheckmarkJsonServices.Serialize(newList);
-            var configFile = CheckmarkFileServices.ReadConfigFileJson();
-            var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
-            CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME,json);
+            CheckmarkListServices.AddList(newList);
         }
     }
 }
