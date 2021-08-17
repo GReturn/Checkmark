@@ -1,4 +1,11 @@
-﻿using System.IO;
+﻿/*
+ * This class provides file management services. 
+ * Content may seem conflicted with CheckmarkJsonServices.cs,
+ * but you should know that codes can experience
+ * existential problems too! #CodeMentalHealthAwareness <3
+ */
+
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Checkmark.Templates;

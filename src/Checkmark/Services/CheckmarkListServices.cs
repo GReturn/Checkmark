@@ -1,4 +1,8 @@
-﻿using Checkmark.Templates;
+﻿/*
+ * This class provides services specific to the entire list of the user.
+ */
+
+using Checkmark.Templates;
 
 namespace Checkmark.Services
 {
