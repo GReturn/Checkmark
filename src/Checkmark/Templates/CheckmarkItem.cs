@@ -4,18 +4,23 @@ using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
-    public class CheckmarkItemListTemplateJson
+    public class CheckmarkItem
     {
+        [JsonPropertyName("Id")]
+        public int Id { get; set; }
+
         [JsonPropertyName("Title")]
-        public string Title { get; set; }
+        public string TodoItem { get; set; }
+
         [JsonPropertyName("Priority")]
         public string Priority { get; set; }
+
         [JsonPropertyName("Items")]
-        public IEnumerable<string> Items { get; set; }
+        public string Status { get; set; } = "To do";
     }
     // DO THIS LATER AFTER COMPLETING VIEW FEATURE:
     public class CheckmarkList : ArrayList
     {
-        public IList<CheckmarkItemListTemplateJson> ListTitle { get; set; }
+        public IList<CheckmarkItem> ListTitle { get; set; }
     }
 }
