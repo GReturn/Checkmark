@@ -17,7 +17,7 @@ namespace Checkmark.Services
                 File.WriteAllText(pathToFile, json);
             }
         }
-        public static async Task<CheckmarkItemListTemplateJson> ReadListFileJson(string jsonListFile)
+        public static async Task<CheckmarkItem> ReadListFileJson(string jsonListFile)
         {
             var jsonFile = string.Empty;
 
