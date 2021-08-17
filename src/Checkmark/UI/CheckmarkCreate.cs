@@ -9,23 +9,21 @@ namespace Checkmark.UI
     {
         public static void ShowCreateMenu()
         {
-            var newListName = Prompt.Input<string>("List name");
-            var newListItems = Prompt.List<string>("Add item(s) to your list");
-            var newListPriority = Prompt.Select("How important is this list?", 
+            var newItem = Prompt.Input<string>("List name");
+            var itemPriority = Prompt.Select("How important is this list?", 
                 new[] { 
                     "Urgent", 
                     "A bit important", 
                     "Not important" 
                 });
-            var confirm = Prompt.Confirm($"Proceed to create list: {newListName}?");
+            var confirm = Prompt.Confirm($"Proceed to create list: {newItem}?");
 
             if (confirm)
             {
-                var newList = new CheckmarkItemListTemplateJson
+                var newList = new CheckmarkItem
                 {
-                    Title = newListName,
-                    Priority = newListPriority,
-                    Items = newListItems
+                    TodoItem = newItem,
+                    Priority = itemPriority
                 };
                 //var arrayList = new ArrayList();
                 //arrayList.Add(newList);
