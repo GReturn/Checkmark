@@ -2,7 +2,7 @@
  * This class provides file management services. 
  * Content may seem conflicted with CheckmarkJsonServices.cs,
  * but you should know that codes can experience
- * existential problems too! #CodeMentalHealthAwareness <3
+ * existential crises too! #CodeMentalHealthAwareness <3
  */
 
 using System.IO;
