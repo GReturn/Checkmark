@@ -6,6 +6,7 @@ namespace Checkmark.Templates
 {
     public class CheckmarkItem
     {
+        // TODO: Set ID
         [JsonPropertyName("Id")]
         public int Id { get; set; }
 
@@ -15,10 +16,10 @@ namespace Checkmark.Templates
         [JsonPropertyName("Priority")]
         public string Priority { get; set; }
 
-        [JsonPropertyName("Items")]
+        [JsonPropertyName("Status")]
         public string Status { get; set; } = "To do";
     }
-    // DO THIS LATER AFTER COMPLETING VIEW FEATURE:
+    // TODO: DO THIS LATER AFTER COMPLETING VIEW FEATURE:
     public class CheckmarkList : ArrayList
     {
         public IList<CheckmarkItem> ListTitle { get; set; }
