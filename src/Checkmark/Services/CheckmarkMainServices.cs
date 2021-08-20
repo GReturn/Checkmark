@@ -4,9 +4,10 @@
 
 using Checkmark.Templates;
 
+
 namespace Checkmark.Services
 {
-    public class CheckmarkListServices
+    public class CheckmarkMainServices
     {
         public static void AddList(CheckmarkItem list)
         {
@@ -15,9 +16,11 @@ namespace Checkmark.Services
             var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
             CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
         }
-        public void ReadList()
+        public static CheckmarkItem ReadList()
         {
-
+            var configFile = CheckmarkFileServices.ReadConfigFileJson();
+            var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
+            return CheckmarkFileServices.ReadListFileJson(checkmarkConfig);
         }
         public void UpdateList()
         {

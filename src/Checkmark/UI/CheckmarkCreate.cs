@@ -29,10 +29,8 @@ namespace Checkmark.UI
                     TodoItem = newItem,
                     Priority = itemPriority
                 };
-                //var arrayList = new ArrayList();
-                //arrayList.Add(newList);
 
-                CheckmarkListServices.AddList(newList);
+                CheckmarkMainServices.AddList(newList);
             }
             
         }
