@@ -15,7 +15,7 @@ namespace Checkmark
             }
             while (true)
             {
-                CheckmarkMenu.Run();
+                CheckmarkMenu.Run(Delete This When Testing);
             }
         }
     }
