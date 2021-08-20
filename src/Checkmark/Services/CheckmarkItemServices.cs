@@ -19,30 +19,36 @@ namespace Checkmark.Services
         {
             // check for existing IDs
             // create new ID.
-
-
-
             return 1;
         }
         public static void CreateTableFromList()
         {
-            var checkmarkList = new CheckmarkItem();
+            //var checkmarkList = new CheckmarkItem();
 
-            var table = new ConsoleTable("Id", "Item Name", "Priority");
-            table.AddRow(1, 2, 3)
-                 .AddRow("this line should be longer", "yes it is", "oh");
+            //var table = new ConsoleTable("Id", "Item Name", "Priority", "Status");
 
-            table.Write();
-            Console.WriteLine();
+            //foreach (var item in )
+            //{
+            //    table.AddRow(checkmarkList.Id, checkmarkList.TodoItem, checkmarkList.Priority, checkmarkList.Status);
+            //}
 
-            var rows = Enumerable.Repeat(new Something(), 10);
 
-            ConsoleTable
-                .From<Something>(rows)
-                .Configure(o => o.NumberAlignment = Alignment.Right)
-                .Write(Format.Alternative);
 
-            Console.ReadKey();
+
+            //table.AddRow(1, 2, 3, 4)
+            //     .AddRow("this line should be longer", "yes it is", "oh");
+
+            //table.Write();
+            //Console.WriteLine();
+
+            //var rows = Enumerable.Repeat(new Something(), 10);
+
+            //ConsoleTable
+            //    .From<Something>(rows)
+            //    .Configure(o => o.NumberAlignment = Alignment.Right)
+            //    .Write(Format.Alternative);
+
+            //Console.ReadKey();
         }
     }
 }

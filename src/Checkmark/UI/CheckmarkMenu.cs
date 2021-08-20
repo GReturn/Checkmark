@@ -29,7 +29,7 @@ namespace Checkmark
                     CheckmarkCreate.ShowCreateMenu();
                     break;
                 case "VIEW MY LISTS AND TASKS":
-                    WriteLine("Viewing...");
+                    CheckmarkView.ShowViewMenu();
                     break;
                 case "UPDATE": 
                     WriteLine("Updating...");

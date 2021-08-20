@@ -24,16 +24,20 @@ namespace Checkmark.Services
                 File.WriteAllText(pathToFile, json);
             }
         }
-        public static async Task<CheckmarkItem> ReadListFileJson(string jsonListFile)
+
+        // TODO: make code async. Run before Sharprompt instance in CheckmarkView.cs
+        public static CheckmarkItem ReadListFileJson(CheckmarkConfig config)
         {
+            var configPath = Path.Combine(config.DIR, config.FILENAME);
             var jsonFile = string.Empty;
 
-            using (var fileString = File.OpenRead(jsonListFile))
+            using (var fileString = File.OpenRead(configPath))
             using (var streamReader = new StreamReader(fileString, new UTF8Encoding(false)))
-                jsonFile = await streamReader.ReadToEndAsync().ConfigureAwait(false);
+                jsonFile = streamReader.ReadToEnd();
 
             return CheckmarkJsonServices.Deserialize(jsonFile);
         }
+        // TODO: Merge with Deserialize<CheckmarkConfig> on CheckmarkJsonServices.cs
         public static string ReadConfigFileJson()
         {
             var pathToFile = Path.Combine(CheckmarkConfig.CheckmarkConfigDirectory, CheckmarkConfig.CheckmarkConfigFileName);

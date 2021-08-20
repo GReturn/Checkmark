@@ -1,4 +1,6 @@
 ﻿using Sharprompt;
+using static System.Console;
+using Checkmark.Services;
 
 namespace Checkmark.UI
 {
@@ -9,9 +11,11 @@ namespace Checkmark.UI
             var viewListChoice = Prompt.Select("How do you want to view your lists?",
                 new[] {
                     "In a table", // TODO: Feature - Add ConsoleTables: https://github.com/khalidabuhakmeh/ConsoleTables
-                    "A bit important",
-                    "Not important"
+                    "No",
+                    "None"
                 });
+            var list = CheckmarkMainServices.ReadList();
+            WriteLine($"{list.Priority} | {list.TodoItem} | {list.Status}");
         }
     }
 }

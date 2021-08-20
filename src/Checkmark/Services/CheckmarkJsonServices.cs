@@ -32,6 +32,7 @@ namespace Checkmark.Services
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
+        // TODO: Merge with ReadConfigFileJson on CheckmarkFileService.cs
         public static CheckmarkConfig Deserialize<CheckmarkConfig>(string json)
         {
             return JsonSerializer.Deserialize<CheckmarkConfig>(json, jsonSerializerOptions);
