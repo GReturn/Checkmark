@@ -64,4 +64,4 @@ csharp_preferred_modifier_order = public,private,static,async:suggestion
 
 #prefer properties not to be prefaced with this. or Me. in Visual Basic
 dotnet_style_qualification_for_property = false:suggestion
-csharp_using_directive_placement=inside_namespace:silent
+csharp_using_directive_placement=outside_namespace:silent

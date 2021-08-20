@@ -1,43 +1,35 @@
 using System;
-using static System.Console;
 using Sharprompt;
+using static System.Console;
+using Checkmark.UI;
 
 namespace Checkmark
-{ 
-    public class CheckmarkMenu
+{
+    static internal class CheckmarkMenu
     {
-        private const string prefix = ">>";
         public static void Run()
         {
-            while(true)
-            {    
-                ShowMainMenu();
-            }
+            ShowMainMenu();
         }
         private static void ShowMainMenu()
         {
-            Write(prefix);
-
-            WriteLine(" Welcome to Checkmark");
-            
             var input = Prompt.Select("What do you wish to do?", 
             new[] 
             { 
                 "Create new list", 
                 "View my lists and tasks", 
                 "Update", 
-                "Delete", 
-                "Exit" 
+                "Delete",
+                "Exit"
             });
-            Options option = new();
             
             switch(input.ToUpper())
             {
                 case "CREATE NEW LIST":
-                    option.NewList();
+                    CheckmarkCreate.ShowCreateMenu();
                     break;
                 case "VIEW MY LISTS AND TASKS":
-                    option.ViewList();
+                    CheckmarkView.ShowViewMenu();
                     break;
                 case "UPDATE": 
                     WriteLine("Updating...");
