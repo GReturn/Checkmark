@@ -1,5 +1,5 @@
 # Checkmark
-A simple todo console application written in .NET C#.
+A simple todo .NET console application written in C#.
 
 ### Features
 * Highly interactive!
