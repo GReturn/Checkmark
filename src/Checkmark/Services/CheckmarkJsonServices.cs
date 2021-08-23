@@ -21,21 +21,12 @@ namespace Checkmark.Services
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
-        public static CheckmarkItem Deserialize(string json)
-        {
-            return JsonSerializer.Deserialize<CheckmarkItem>(json, jsonSerializerOptions);
-        }
         #endregion
 
         #region JSON services for Checkmark files configuration
         public static string Serialize(CheckmarkConfig json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
-        }
-        // TODO: Merge with ReadConfigFileJson on CheckmarkFileService.cs
-        public static CheckmarkConfig Deserialize<CheckmarkConfig>(string json)
-        {
-            return JsonSerializer.Deserialize<CheckmarkConfig>(json, jsonSerializerOptions);
         }
         #endregion
     }
