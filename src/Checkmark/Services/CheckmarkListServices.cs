@@ -39,14 +39,5 @@ namespace Checkmark.Services
             #endregion
             return JsonSerializer.Deserialize<CheckmarkList>(listJson);
         }
-        /* 
-         * Add here merged CheckmarkFileServices.cs and CheckmarkJsonServices.cs
-         * 
-         * Methods must be relating to list services such as
-         * GetCheckmarkListFromPath()
-         * 
-         * use regions if you decide to separate JSON services.
-        */
-    
     }
 }

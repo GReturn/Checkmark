@@ -11,6 +11,7 @@ namespace Checkmark.Services
 {
     public static class CheckmarkFileServices
     {
+        // TODO: Migrate this to CheckmarkJsonServices
         public static void CreateJsonFile(string directory, string filename, string json)
         {
             var pathToFile = Path.Combine(directory, filename);
