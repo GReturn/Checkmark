@@ -17,7 +17,7 @@ namespace Checkmark.Services
         };
 
         #region JSON services for the user's Checkmark list
-        public static string Serialize(CheckmarkItem json)
+        public static string Serialize(CheckmarkList json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }

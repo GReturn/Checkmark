@@ -29,7 +29,7 @@ namespace Checkmark.Services
             #endregion
             return JsonSerializer.Deserialize<CheckmarkConfig>(configFile, jsonSerializerOptions);
         }
-        public static CheckmarkItem GetCheckmarkList() // TODO: Make async. Run before Sharprompt instance in CheckmarkView.cs
+        public static CheckmarkList GetCheckmarkList() // TODO: Make async. Run before Sharprompt instance in CheckmarkView.cs
         {
             var checkmarkConfig = GetCheckmarkConfig();
 
@@ -41,7 +41,7 @@ namespace Checkmark.Services
             using (var streamReader = new StreamReader(fileString, new UTF8Encoding(false)))
                 listJson = streamReader.ReadToEnd();
             #endregion
-            return JsonSerializer.Deserialize<CheckmarkItem>(listJson);
+            return JsonSerializer.Deserialize<CheckmarkList>(listJson);
         }
 
 
