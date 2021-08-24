@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
-using System.IO;
 using Checkmark.Templates;
 
 namespace Checkmark.Services
@@ -43,8 +39,6 @@ namespace Checkmark.Services
             #endregion
             return JsonSerializer.Deserialize<CheckmarkList>(listJson);
         }
-
-
         /* 
          * Add here merged CheckmarkFileServices.cs and CheckmarkJsonServices.cs
          * 
