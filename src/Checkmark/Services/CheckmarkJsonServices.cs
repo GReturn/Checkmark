@@ -16,7 +16,6 @@ namespace Checkmark.Services
             WriteIndented = true,
         };
 
-        #region Serializers
         public static string Serialize(CheckmarkList json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
@@ -25,7 +24,7 @@ namespace Checkmark.Services
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
-        #endregion
+
         public static void CreateJsonFile(string directory, string filename, string json)
         {
             var pathToFile = Path.Combine(directory, filename);

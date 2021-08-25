@@ -1,12 +1,12 @@
 ﻿/*
- * This class provides services specific to a Checkmark list.
+ * This class provides services specific to a Checkmark item.
  */
 
 namespace Checkmark.Services
 {
     public class CheckmarkItemServices
     {
-        // TODO: 
+        // TODO: Create a function that generates a valid ID. Use GUID generators?
         public static int CreateItemId()
         {
             // check for existing IDs

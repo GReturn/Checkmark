@@ -16,11 +16,6 @@ namespace Checkmark.Services
         }
         public static CheckmarkList ReadList()
         {
-            // TODO: change?
-            /*
-             * Add parser?
-             * Validator?
-             */
             return CheckmarkListServices.GetCheckmarkList();
         }
         public void UpdateList()
