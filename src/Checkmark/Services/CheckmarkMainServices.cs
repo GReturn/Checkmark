@@ -4,27 +4,23 @@
 
 using Checkmark.Templates;
 
-
 namespace Checkmark.Services
 {
     public class CheckmarkMainServices
     {
-        public static void AddList(CheckmarkItem list)
+        public static void AddList(CheckmarkList list)
         {
             var json = CheckmarkJsonServices.Serialize(list);
-            var configFile = CheckmarkFileServices.ReadConfigFileJson();
-            var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
-            CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
+            var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
+            CheckmarkJsonServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
         }
-        public static CheckmarkItem ReadList()
+        public static CheckmarkList ReadList()
         {
-            var configFile = CheckmarkFileServices.ReadConfigFileJson();
-            var checkmarkConfig = CheckmarkJsonServices.Deserialize<CheckmarkConfig>(configFile);
-            return CheckmarkFileServices.ReadListFileJson(checkmarkConfig);
+            return CheckmarkListServices.GetCheckmarkList();
         }
         public void UpdateList()
         {
-            // Should have ability to add more to list and overwrite existing items in list.
+            // TODO: Should have ability to add more items to list and overwrite existing items in list.
         }
         public void DeleteList()
         {

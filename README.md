@@ -1,8 +1,7 @@
 # Checkmark
-A simple todo console application written in .NET C#.
+A simple todo .NET console application written in C#.
 
 ### Features
-* Create multiple todo lists!
 * Highly interactive!
 
 <!-- * Text-to-speech support!-->
