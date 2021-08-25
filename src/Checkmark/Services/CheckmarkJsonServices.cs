@@ -4,7 +4,7 @@
 
 using System.Text.Json;
 using Checkmark.Templates;
-using System.Collections;
+using System.IO;
 
 namespace Checkmark.Services
 {
@@ -16,27 +16,24 @@ namespace Checkmark.Services
             WriteIndented = true,
         };
 
-        #region JSON services for the user's Checkmark list
-        public static string Serialize(CheckmarkItem json)
+        public static string Serialize(CheckmarkList json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
-        public static CheckmarkItem Deserialize(string json)
-        {
-            return JsonSerializer.Deserialize<CheckmarkItem>(json, jsonSerializerOptions);
-        }
-        #endregion
-
-        #region JSON services for Checkmark files configuration
         public static string Serialize(CheckmarkConfig json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
-        // TODO: Merge with ReadConfigFileJson on CheckmarkFileService.cs
-        public static CheckmarkConfig Deserialize<CheckmarkConfig>(string json)
+
+        public static void CreateJsonFile(string directory, string filename, string json)
         {
-            return JsonSerializer.Deserialize<CheckmarkConfig>(json, jsonSerializerOptions);
+            var pathToFile = Path.Combine(directory, filename);
+            Directory.CreateDirectory(directory);
+
+            if (Directory.Exists(directory))
+            {
+                File.WriteAllText(pathToFile, json);
+            }
         }
-        #endregion
     }
 }

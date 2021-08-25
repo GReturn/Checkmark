@@ -23,7 +23,7 @@ namespace Checkmark.UI
                 // TODO: 
                 var id = CheckmarkItemServices.CreateItemId();
 
-                var newList = new CheckmarkItem
+                var newList = new CheckmarkList
                 {
                     Id = id,
                     TodoItem = newItem,

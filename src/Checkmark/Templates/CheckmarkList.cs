@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
-    public class CheckmarkItem
+    public class CheckmarkList
     {
         // TODO: Set ID
         [JsonPropertyName("Id")]
@@ -20,8 +20,8 @@ namespace Checkmark.Templates
         public string Status { get; set; } = "To do";
     }
     // TODO: DO THIS LATER AFTER COMPLETING VIEW FEATURE:
-    public class CheckmarkList : ArrayList
-    {
-        public IList<CheckmarkItem> ListTitle { get; set; }
-    }
+    //public class CheckmarkList : ArrayList
+    //{
+    //    public IList<CheckmarkList> ListTitle { get; set; }
+    //}
 }
