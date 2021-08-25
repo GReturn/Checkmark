@@ -12,7 +12,7 @@ namespace Checkmark.Services
         {
             var json = CheckmarkJsonServices.Serialize(list);
             var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
-            CheckmarkFileServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
+            CheckmarkJsonServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
         }
         public static CheckmarkList ReadList()
         {

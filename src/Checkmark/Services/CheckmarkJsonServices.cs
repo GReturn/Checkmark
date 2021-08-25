@@ -4,6 +4,7 @@
 
 using System.Text.Json;
 using Checkmark.Templates;
+using System.IO;
 
 namespace Checkmark.Services
 {
@@ -25,5 +26,15 @@ namespace Checkmark.Services
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
         #endregion
+        public static void CreateJsonFile(string directory, string filename, string json)
+        {
+            var pathToFile = Path.Combine(directory, filename);
+            Directory.CreateDirectory(directory);
+
+            if (Directory.Exists(directory))
+            {
+                File.WriteAllText(pathToFile, json);
+            }
+        }
     }
 }
