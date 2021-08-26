@@ -9,24 +9,20 @@ namespace Checkmark.UI
     {
         public static void ShowCreateMenu()
         {
-            var newItem = Prompt.Input<string>("List name");
+            var itemName = Prompt.Input<string>("List name");
             var itemPriority = Prompt.Select("How important is this item?", 
                 new[] { 
                     "Urgent", 
                     "A bit important", 
                     "Not important" 
                 });
-            var confirm = Prompt.Confirm($"Proceed to create item: {newItem}?");
+            var confirm = Prompt.Confirm($"Proceed to create item: {itemName}?");
 
             if (confirm)
             {
-                // TODO: 
-                var id = CheckmarkItemServices.CreateItemId();
-
                 var newList = new CheckmarkList
                 {
-                    Id = id,
-                    TodoItem = newItem,
+                    TodoItem = itemName,
                     Priority = itemPriority
                 };
 

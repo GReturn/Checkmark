@@ -1,16 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System.Text.Json.Serialization;
 using System.Collections;
-using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
-    public class CheckmarkList
+    public class CheckmarkList : ArrayList
     {
-        // TODO: Set ID
-        [JsonPropertyName("Id")]
-        public int Id { get; set; }
+        [JsonPropertyName("Item")]
+        public CheckmarkItem Item { get; set; }
 
-        [JsonPropertyName("Title")]
+        /*
+         * Make it look like this:
+         * 
+         *  list [
+         *      index_01 {
+         *          "ItemName":"itemName",
+         *          "Priority":"Important"
+         *          "Status":"To do"
+         *      }
+         *      index_02 {
+         *      
+         *      }
+         *      
+         * ]
+         */
+    }
+    public class CheckmarkItem
+    {
+        [JsonPropertyName("ItemName")]
         public string TodoItem { get; set; }
 
         [JsonPropertyName("Priority")]
@@ -19,9 +35,4 @@ namespace Checkmark.Templates
         [JsonPropertyName("Status")]
         public string Status { get; set; } = "To do";
     }
-    // TODO: DO THIS LATER AFTER COMPLETING VIEW FEATURE:
-    //public class CheckmarkList : ArrayList
-    //{
-    //    public IList<CheckmarkList> ListTitle { get; set; }
-    //}
 }
