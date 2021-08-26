@@ -1,9 +1,7 @@
-﻿using Sharprompt;
-using static System.Console;
-using Checkmark.Services;
+﻿using Checkmark.Services;
 using Checkmark.Templates;
 using ConsoleTables;
-using System.Linq;
+using Sharprompt;
 
 namespace Checkmark.UI
 {
@@ -25,18 +23,17 @@ namespace Checkmark.UI
 
             // TODO: Make list into an array. Reiterate foreach() table.AddRow.
 
-            table.AddRow(1, 2, 3, 4)
-                 .AddRow($"No ID system", $"{list.TodoItem}", $"{list.Priority}", $"{list.Status}");
+            table.AddRow(null, $"{list.TodoItem}", $"{list.Priority}", $"{list.Status}");
 
             table.Write();
-            WriteLine();
+            //WriteLine();
 
-            var rows = Enumerable.Repeat(new CheckmarkList(), 10);
+            //var rows = Enumerable.Repeat(new CheckmarkList(), 10);
 
-            ConsoleTable
-                .From<CheckmarkList>(rows)
-                .Configure(o => o.NumberAlignment = Alignment.Right)
-                .Write(Format.Alternative);
+            //ConsoleTable
+            //    .From<CheckmarkList>(rows)
+            //    .Configure(o => o.NumberAlignment = Alignment.Right)
+            //    .Write(Format.Alternative);
         }
     }
 }

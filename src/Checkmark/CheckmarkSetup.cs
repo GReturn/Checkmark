@@ -29,7 +29,7 @@ namespace Checkmark
                     };
                     var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
 
-                    CheckmarkFileServices.CreateJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,CheckmarkConfig.CheckmarkConfigFileName,json);
+                    CheckmarkJsonServices.CreateJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,CheckmarkConfig.CheckmarkConfigFileName,json);
                 }
                 else
                 {

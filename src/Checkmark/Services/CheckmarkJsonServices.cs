@@ -1,8 +1,4 @@
-﻿/*
- * This class provides JSON (JavaSctipt Object Notation) de/serialization services.
- */
-
-using System.Text.Json;
+﻿using System.Text.Json;
 using Checkmark.Templates;
 using System.IO;
 

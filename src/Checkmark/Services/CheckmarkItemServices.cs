@@ -1,8 +1,4 @@
-﻿/*
- * This class provides services specific to a Checkmark item.
- */
-
-namespace Checkmark.Services
+﻿namespace Checkmark.Services
 {
     public class CheckmarkItemServices
     {
