@@ -1,7 +1,7 @@
 ﻿using System;
-using Sharprompt;
 using System.IO;
 using Checkmark.Services;
+using Sharprompt;
 
 namespace Checkmark
 {
@@ -14,7 +14,7 @@ namespace Checkmark
              */
             var ready = Prompt.Confirm("Before you start writing your todo lists, please finish the setup.");
 
-            Input:
+        Input:
             if (ready)
             {
                 var userDirectory = Prompt.Input<string>(@"Where do you want to save your lists? e.g. C:\Temp");
@@ -29,7 +29,7 @@ namespace Checkmark
                     };
                     var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
 
-                    CheckmarkJsonServices.CreateJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,CheckmarkConfig.CheckmarkConfigFileName,json);
+                    CheckmarkJsonServices.CreateJsonFile(CheckmarkConfig.CheckmarkConfigDirectory, CheckmarkConfig.CheckmarkConfigFileName, json);
                 }
                 else
                 {

@@ -1,5 +1,5 @@
-﻿using System.Text.Json.Serialization;
-using System.Collections;
+﻿using System.Collections;
+using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
@@ -10,7 +10,7 @@ namespace Checkmark.Templates
 
         /*
          * Make it look like this:
-         * 
+         *
          *  list [
          *      index_01 {
          *          "ItemName":"itemName",
@@ -18,12 +18,13 @@ namespace Checkmark.Templates
          *          "Status":"To do"
          *      }
          *      index_02 {
-         *      
+         *
          *      }
-         *      
+         *
          * ]
          */
     }
+
     public class CheckmarkItem
     {
         [JsonPropertyName("ItemName")]

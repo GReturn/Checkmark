@@ -1,6 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.IO;
+using System.Text.Json;
 using Checkmark.Templates;
-using System.IO;
 
 namespace Checkmark.Services
 {
@@ -16,6 +16,7 @@ namespace Checkmark.Services
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);
         }
+
         public static string Serialize(CheckmarkConfig json)
         {
             return JsonSerializer.Serialize(json, jsonSerializerOptions);

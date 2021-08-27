@@ -15,8 +15,8 @@ namespace Checkmark.UI
                 });
             var list = CheckmarkMainServices.ReadList();
             MakeListTable(list);
-
         }
+
         private static void MakeListTable(CheckmarkList list)
         {
             var table = new ConsoleTable("Id", "Item", "Priority", "Status");
