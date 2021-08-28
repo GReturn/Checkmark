@@ -21,9 +21,9 @@ namespace Checkmark
             new[]
             {
                 "Create new list",
-                "View my lists and tasks",
-                "Update",
-                "Delete",
+                "View my tasks",
+                "Add tasks", // TODO: Merge with create new list. Do this after finishing MVP.
+                "Remove tasks",
                 "Exit"
             });
 
@@ -33,7 +33,7 @@ namespace Checkmark
                     CheckmarkCreate.ShowCreateMenu();
                     break;
 
-                case "VIEW MY LISTS AND TASKS":
+                case "VIEW MY TASKS":
                     CheckmarkView.ShowViewMenu();
                     break;
 
@@ -41,7 +41,7 @@ namespace Checkmark
                     WriteLine("Updating...");
                     break;
 
-                case "DELETE":
+                case "REMOVE TASKS":
                     WriteLine("Deleting...");
                     break;
 
