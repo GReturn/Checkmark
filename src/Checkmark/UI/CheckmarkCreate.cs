@@ -3,6 +3,8 @@ using Checkmark.Templates;
 
 using Sharprompt;
 
+using System.Collections.Generic;
+
 namespace Checkmark.UI
 {
     static internal class CheckmarkCreate
@@ -20,10 +22,9 @@ namespace Checkmark.UI
 
             if (confirm)
             {
-                var newList = new CheckmarkList
+                var newList = new List<CheckmarkItem>
                 {
-                    TodoItem = itemName,
-                    Priority = itemPriority
+                    new CheckmarkItem { TodoItem = itemName, Priority = itemPriority }
                 };
 
                 CheckmarkMainServices.AddList(newList);

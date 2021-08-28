@@ -3,11 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Checkmark.Templates
 {
-    public class CheckmarkList : ArrayList
-    {
-        [JsonPropertyName("Item")]
-        public CheckmarkItem Item { get; set; }
-
+    
         /*
          * Make it look like this:
          *
@@ -23,7 +19,6 @@ namespace Checkmark.Templates
          *
          * ]
          */
-    }
 
     public class CheckmarkItem
     {

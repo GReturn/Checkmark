@@ -4,7 +4,7 @@ namespace Checkmark.Services
 {
     public class CheckmarkMainServices
     {
-        public static void AddList(CheckmarkList list)
+        public static void AddList(CheckmarkItem list)
         {
             var json = CheckmarkJsonServices.Serialize(list);
             var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
