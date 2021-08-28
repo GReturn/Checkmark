@@ -1,6 +1,9 @@
 using System;
+
 using Checkmark.UI;
+
 using Sharprompt;
+
 using static System.Console;
 
 namespace Checkmark

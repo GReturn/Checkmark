@@ -1,6 +1,8 @@
 ﻿using Checkmark.Services;
 using Checkmark.Templates;
+
 using ConsoleTables;
+
 using Sharprompt;
 
 namespace Checkmark.UI

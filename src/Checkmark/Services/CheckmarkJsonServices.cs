@@ -1,10 +1,11 @@
 ﻿using System.IO;
 using System.Text.Json;
+
 using Checkmark.Templates;
 
 namespace Checkmark.Services
 {
-    public class CheckmarkJsonServices
+    public static class CheckmarkJsonServices
     {
         private static readonly JsonSerializerOptions jsonSerializerOptions = new()
         {

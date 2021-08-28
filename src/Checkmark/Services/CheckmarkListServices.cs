@@ -1,11 +1,12 @@
 ﻿using System.IO;
 using System.Text;
 using System.Text.Json;
+
 using Checkmark.Templates;
 
 namespace Checkmark.Services
 {
-    internal class CheckmarkListServices
+    static internal class CheckmarkListServices
     {
         private static readonly JsonSerializerOptions jsonSerializerOptions = new()
         {

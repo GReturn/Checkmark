@@ -3,9 +3,9 @@ using System.IO;
 
 namespace Checkmark
 {
-    internal class Program
+    static internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             Console.WriteLine("Welcome to Checkmark");
 

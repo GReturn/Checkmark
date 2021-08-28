@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
+
 using Checkmark.Services;
+
 using Sharprompt;
 
 namespace Checkmark
