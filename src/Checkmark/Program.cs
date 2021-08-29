@@ -1,5 +1,10 @@
 ﻿using System;
-using System.IO;
+
+using Microsoft.Extensions.DependencyInjection;
+
+using Sharprompt;
+
+using static System.Console;
 
 namespace Checkmark
 {
@@ -7,18 +12,54 @@ namespace Checkmark
     {
         private static void Main()
         {
-            var config = new CheckmarkConfig();
+            var services = ConfigureServices();
+            var provider = services.BuildServiceProvider();
 
-            Console.WriteLine("Welcome to Checkmark");
+            InteractiveMode(provider);
+        }
 
-            if (!File.Exists(Path.Combine(config.Directory, config.FileName)))
+        private static void InteractiveMode(ServiceProvider provider)
+        {
+            WriteLine("Welcome to Checkmark!");
+
+            var command = Prompt.Select("What do you wish to do?",
+            new[]
             {
-                CheckmarkSetup.InteractiveMode();
-            }
-            while (true)
+                "Add new item to list",
+                "Read my list",
+                "Delete an item",
+                "Exit application"
+            });
+            HandleCommand(provider, command);
+        }
+
+        private static void HandleCommand(ServiceProvider provider, string command)
+        {
+            switch (command)
             {
-                CheckmarkMenu.Run();
+                case "Add new item to list":
+                    WriteLine("Adding");
+                    break;
+
+                case "Read my list":
+                    WriteLine("Reading");
+                    break;
+
+                case "Delete an item":
+                    WriteLine("Deleting");
+                    break;
+
+                case "Exit application":
+                    Environment.Exit(0);
+                    break;
             }
+        }
+
+        private static IServiceCollection ConfigureServices()
+        {
+            var services = new ServiceCollection();
+
+            return services;
         }
     }
 }
