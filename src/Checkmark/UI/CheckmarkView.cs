@@ -19,7 +19,7 @@ namespace Checkmark.UI
             MakeListTable(list);
         }
 
-        private static void MakeListTable(CheckmarkList list)
+        private static ConsoleTable MakeListTable(CheckmarkList list)
         {
             var table = new ConsoleTable("Id", "Item", "Priority", "Status");
 
@@ -27,7 +27,7 @@ namespace Checkmark.UI
 
             table.AddRow(null, $"{list.TodoItem}", $"{list.Priority}", $"{list.Status}");
 
-            table.Write();
+            return table;
             //WriteLine();
 
             //var rows = Enumerable.Repeat(new CheckmarkList(), 10);

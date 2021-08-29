@@ -19,7 +19,7 @@ namespace Checkmark.Services
             #region Get config file
 
             var configFile = string.Empty;
-            var pathToFile = Path.Combine(CheckmarkConfig.CheckmarkConfigDirectory, CheckmarkConfig.CheckmarkConfigFileName);
+            var pathToFile = Path.Combine(CheckmarkConfig.Directory, CheckmarkConfig.FileName);
 
             using (var fileString = File.OpenRead(pathToFile))
             using (var streamReader = new StreamReader(fileString, new UTF8Encoding(false)))

@@ -7,9 +7,9 @@ using Sharprompt;
 
 namespace Checkmark
 {
-    public class CheckmarkSetup
+    public class CheckmarkSetup : IMenu
     {
-        public static void ShowSetupMenu()
+        public void InteractiveMode()
         {
             /*
              *  Messy code here. Optimize later.

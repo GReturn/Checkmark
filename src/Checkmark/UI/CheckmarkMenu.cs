@@ -12,10 +12,11 @@ namespace Checkmark
     {
         public static void Run()
         {
-            ShowMainMenu();
+            // Apply DI here
+            InteractiveMode();
         }
 
-        private static void ShowMainMenu()
+        private static void InteractiveMode()
         {
             var input = Prompt.Select("What do you wish to do?",
             new[]

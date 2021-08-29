@@ -22,13 +22,13 @@ namespace Checkmark.Templates
 
     public class CheckmarkItem
     {
-        [JsonPropertyName("ItemName")]
-        public string TodoItem { get; set; }
+        //[JsonPropertyName("ItemName")]
+        //public string TodoItem { get; set; }
 
-        [JsonPropertyName("Priority")]
-        public string Priority { get; set; }
+        //[JsonPropertyName("Priority")]
+        //public string Priority { get; set; }
 
-        [JsonPropertyName("Status")]
-        public string Status { get; set; } = "To do";
+        //[JsonPropertyName("Status")]
+        //public string Status { get; set; } = "To do";
     }
 }
