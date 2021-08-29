@@ -5,9 +5,9 @@ namespace Checkmark
     public class CheckmarkConfig
     {
         // Path location of checkmark-config.json
-        public static string CheckmarkConfigDirectory { get; } = "/LocalStorage/";
+        public string Directory { get; } = "/LocalStorage/";
 
-        public static string CheckmarkConfigFileName { get; } = "checkmark-config.json";
+        public string FileName { get; } = "checkmark-config.json";
 
         // Contents of checkmark-config.json
         [JsonPropertyName("Directory")]
