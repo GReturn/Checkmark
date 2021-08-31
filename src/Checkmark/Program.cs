@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Sharprompt;
 
+using Checkmark.Handlers;
+
 using static System.Console;
 
 namespace Checkmark
@@ -38,7 +40,7 @@ namespace Checkmark
             switch (command)
             {
                 case "Add new item to list":
-                    WriteLine("Adding");
+                    provider.GetRequiredService<AddItemHandler>();
                     break;
 
                 case "Read my list":
@@ -58,6 +60,8 @@ namespace Checkmark
         private static IServiceCollection ConfigureServices()
         {
             var services = new ServiceCollection();
+
+            services.AddSingleton<AddItemHandler>();
 
             return services;
         }
