@@ -1,32 +1,31 @@
-﻿namespace Checkmark.ConsoleUI.Menus
+﻿namespace Checkmark.ConsoleUI.Menus;
+
+internal class CheckmarkSetupMenu
 {
-    internal class CheckmarkSetupMenu
+    public static void ShowSetupMenu()
     {
-        public static void ShowSetupMenu()
+        var ready = Prompt.Confirm("Before you start writing your todo lists, please finish the setup.");
+
+        Input:
+        if (ready)
         {
-            var ready = Prompt.Confirm("Before you start writing your todo lists, please finish the setup.");
+            var userDirectory = Prompt.Input<string>(@"Where do you want to save your lists? e.g. C:\Temp");
 
-            Input:
-            if (ready)
+            if(Directory.Exists(userDirectory)) 
             {
-                var userDirectory = Prompt.Input<string>(@"Where do you want to save your lists? e.g. C:\Temp");
-
-                if(Directory.Exists(userDirectory)) 
-                {
-                    CheckmarkSetup.AddDirectory(userDirectory);                
-                }
-                else
-                {
-                    Console.WriteLine("Directory not found.");
-                    goto Input;
-                }
+                CheckmarkSetup.AddDirectory(userDirectory);                
             }
             else
             {
-                Console.WriteLine("Set-up process could not finish.");
-                Environment.Exit(0);
+                Console.WriteLine("Directory not found.");
+                goto Input;
             }
         }
-
+        else
+        {
+            Console.WriteLine("Set-up process could not finish.");
+            Environment.Exit(0);
+        }
     }
+
 }
