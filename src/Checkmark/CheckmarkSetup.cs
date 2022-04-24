@@ -2,16 +2,7 @@
 
 public class CheckmarkSetup
 {
-    public static bool CheckForConfig()
-    {
-        if (File.Exists(Path.Combine(CheckmarkConfig.CheckmarkConfigDirectory,
-                                         CheckmarkConfig.CheckmarkConfigFileName)))
-        {
-            return true;
-        }
-        return false;
-    }
-
+    // Set-up DIRECTORY and specify where to place future lists
     public static void AddDirectory(string inputDirectory)
     {
         inputDirectory += @"\Checkmark\";

@@ -27,7 +27,7 @@ internal class CheckmarkMainMenu
         switch (command)
         {
             case "Add new item to list":
-                
+                CheckmarkAddToListMenu.ShowAddToListMenu();
                 break;
 
             case "Read my list":
@@ -43,5 +43,4 @@ internal class CheckmarkMainMenu
                 break;
         }
     }
-
 }

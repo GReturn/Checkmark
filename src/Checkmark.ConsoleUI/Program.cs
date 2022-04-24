@@ -6,9 +6,9 @@ internal class MenuUI
 {
     private static void Main()
     {
-        Console.WriteLine("Welcome to Checkmark");
+        WriteLine("Welcome to Checkmark");
 
-        if (!CheckmarkSetup.CheckForConfig()) 
+        if (!CheckmarkConfig.CheckForConfig()) 
         {
             CheckmarkSetupMenu.ShowSetupMenu();
         }
