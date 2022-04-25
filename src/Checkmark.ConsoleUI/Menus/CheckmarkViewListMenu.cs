@@ -8,8 +8,19 @@ internal class CheckmarkViewListMenu
             new[] {
                 "In a table"
             });
+        HandleViewChoice(viewListChoice);
+    }
+    private static void HandleViewChoice(string viewChoice)
+    {
         var list = CheckmarkPublicServices.ReadList();
-        // TableCreator.MakeListTable(list);
 
+        switch (viewChoice)
+        {
+            case "In a table":
+            default:
+                TableCreator.MakeListTable(list);
+                break;
+            
+        }
     }
 }

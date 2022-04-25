@@ -6,7 +6,6 @@ internal class CheckmarkMainMenu
     {           
         InteractiveMode();
     }
-
     private static void InteractiveMode()
     {
         WriteLine("Welcome back to Checkmark!");
@@ -21,7 +20,6 @@ internal class CheckmarkMainMenu
         });
         HandleCommand(command);
     }
-
     private static void HandleCommand(string command)
     {
         switch (command)
@@ -31,7 +29,7 @@ internal class CheckmarkMainMenu
                 break;
 
             case "Read my list":
-                WriteLine("Reading");
+                CheckmarkViewListMenu.ShowViewMenu();
                 break;
 
             case "Delete an item":

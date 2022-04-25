@@ -1,9 +1,1 @@
-﻿namespace Checkmark;
-
-public class Program
-{
-    public static void Main()
-    {
-
-    }
-}
+﻿namespace Checkmark;public class Program{public static void Main(){}}

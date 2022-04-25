@@ -13,16 +13,15 @@ public class CheckmarkPublicServices
     }
     public static (string itemName, string itemPriority) ReadList()
     {
+        // TODO: here:
         CheckmarkListServices.GetCheckmarkList();
 
         return (null, null);
     }
     public void UpdateList()
-    {
-        // TODO: Should have ability to add more items to list and overwrite existing items in list.
+    {        
     }
     public void DeleteList()
     {
-
     }
 }
