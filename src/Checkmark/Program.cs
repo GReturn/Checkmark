@@ -1,22 +1,9 @@
-﻿using System;
-using System.IO;
+﻿namespace Checkmark;
 
-namespace Checkmark
+public class Program
 {
-    static internal class Program
+    public static void Main()
     {
-        private static void Main()
-        {
-            Console.WriteLine("Welcome to Checkmark");
 
-            if (!File.Exists(Path.Combine(CheckmarkConfig.CheckmarkConfigDirectory, CheckmarkConfig.CheckmarkConfigFileName)))
-            {
-                CheckmarkSetup.ShowSetupMenu();
-            }
-            while (true)
-            {
-                CheckmarkMenu.Run();
-            }
-        }
     }
 }

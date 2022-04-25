@@ -1,19 +1,14 @@
-﻿using System.Text.Json.Serialization;
+﻿namespace Checkmark;
 
-namespace Checkmark
+internal class CheckmarkConfig
 {
-    public class CheckmarkConfig
-    {
-        // Path location of checkmark-config.json
-        public static string CheckmarkConfigDirectory { get; } = "/LocalStorage/";
+    // Path location of checkmark-config.json
+    static internal string CheckmarkConfigDirectory { get; } = "/LocalStorage/";
+    static internal string CheckmarkConfigFileName { get; } = "checkmark-config.json";
 
-        public static string CheckmarkConfigFileName { get; } = "checkmark-config.json";
-
-        // Contents of checkmark-config.json
-        [JsonPropertyName("Directory")]
-        public string DIR { get; set; }
-
-        [JsonPropertyName("Filename")]
-        public string FILENAME { get; } = "my-lists.json";
-    }
+    // Contents of checkmark-config.json
+    [JsonPropertyName("Directory")]
+    public string DIR { get; init; }
+    [JsonPropertyName("Filename")]
+    public string FILENAME { get; } = "my-checkmark-lists.json";
 }
