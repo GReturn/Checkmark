@@ -1,4 +1,5 @@
 ﻿namespace Checkmark;
+
 public class CheckmarkConfig
 {
     // Path location of checkmark-config.json

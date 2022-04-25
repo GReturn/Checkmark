@@ -4,7 +4,7 @@ internal class CheckmarkAddToListMenu
 {
     public static void ShowAddToListMenu()
     {
-        var newItem = Prompt.Input<string>("List name");
+        var newItem = Prompt.Input<string>("Item name?");
         var itemPriority = Prompt.Select("How important is this item?",
             new[] {
                     "Urgent",
@@ -15,16 +15,11 @@ internal class CheckmarkAddToListMenu
 
         if (confirm)
         {
-            // TODO: 
-            var id = CheckmarkItemServices.CreateItemId();
-
-            var newList = new CheckmarkList
+            var newList = new CheckmarkListTemplate
             {
-                Id = id,
                 TodoItem = newItem,
                 Priority = itemPriority
             };
-
             CheckmarkMainServices.AddList(newList);
         }
 

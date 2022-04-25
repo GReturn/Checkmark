@@ -2,10 +2,6 @@
 
 internal class CheckmarkListTemplate
 {
-    // TODO: Set ID
-    [JsonPropertyName("Id")]
-    public int Id { get; set; }
-
     [JsonPropertyName("Title")]
     public string TodoItem { get; set; }
 
@@ -14,10 +10,12 @@ internal class CheckmarkListTemplate
 
     [JsonPropertyName("Status")]
     public string Status { get; set; } = "To do";
+    /*
+     * Status: To do, doing, done
+     */
 }
     // TODO: DO THIS LATER AFTER COMPLETING VIEW FEATURE:
     //public class CheckmarkList : ArrayList
     //{
     //    public IList<CheckmarkList> ListTitle { get; set; }
     //}
-}

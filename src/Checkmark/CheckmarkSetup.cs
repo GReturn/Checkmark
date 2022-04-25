@@ -2,7 +2,7 @@
 
 public class CheckmarkSetup
 {
-    // Set-up DIRECTORY and specify where to place future lists
+    // Set-up DIRECTORY and specify where to place future todos
     public static void AddDirectory(string inputDirectory)
     {
         inputDirectory += @"\Checkmark\";
