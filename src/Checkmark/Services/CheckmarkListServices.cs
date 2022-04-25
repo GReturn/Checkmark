@@ -29,7 +29,7 @@ internal class CheckmarkListServices
         #endregion
         return JsonSerializer.Deserialize<CheckmarkConfig>(configFile, jsonSerializerOptions);
     }
-    public static CheckmarkList GetCheckmarkList() // TODO: Make async. Run before Sharprompt instance in CheckmarkView.cs
+    public static CheckmarkListTemplate GetCheckmarkList() // TODO: Make async. Run before Sharprompt instance in CheckmarkView.cs
     {
         var checkmarkConfig = GetCheckmarkConfig();
 
@@ -41,12 +41,12 @@ internal class CheckmarkListServices
         using (var streamReader = new StreamReader(fileString, new UTF8Encoding(false)))
             listJson = streamReader.ReadToEnd();
         #endregion
-        return JsonSerializer.Deserialize<CheckmarkList>(listJson);
+        return JsonSerializer.Deserialize<CheckmarkListTemplate>(listJson);
     }
+
     /* TODO: generate IDs for items in list. Just generate ID in numerical order using for loop. 
      * No need to using ID generators. That would be overengineering it!
-     */ 
-
+     */
     public static int CreateItemId()
     {
         // check for existing IDs

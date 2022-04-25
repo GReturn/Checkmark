@@ -10,7 +10,7 @@ public class CheckmarkConfig
     [JsonPropertyName("Directory")]
     internal string DIR { get; set; }
     [JsonPropertyName("Filename")]
-    internal string FILENAME { get; } = "my-lists.json";
+    internal string FILENAME { get; } = "my-checkmark-lists.json";
 
     public static bool CheckForConfig()
     {
