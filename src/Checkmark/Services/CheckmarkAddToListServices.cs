@@ -6,6 +6,6 @@ internal class CheckmarkAddToListServices
     {
         var json = CheckmarkJsonServices.Serialize(list);
         var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
-        CheckmarkJsonServices.CreateJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
+        CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
     }
 }

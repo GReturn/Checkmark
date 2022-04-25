@@ -5,6 +5,7 @@ internal class CheckmarkJsonServices
     {
         AllowTrailingCommas = true,
         WriteIndented = true,
+        IncludeFields = true,
     };
     public static string Serialize(CheckmarkListTemplate json)
     {
@@ -14,7 +15,7 @@ internal class CheckmarkJsonServices
     {
         return JsonSerializer.Serialize(json, jsonSerializerOptions);
     }
-    public static void CreateJsonFile(string directory, string filename, string json)
+    public static void WriteToJsonFile(string directory, string filename, string json)
     {
         var pathToFile = Path.Combine(directory, filename);
 

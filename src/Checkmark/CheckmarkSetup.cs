@@ -6,15 +6,18 @@ public class CheckmarkSetup
     public static void AddDirectory(string inputDirectory)
     {
         inputDirectory += @"\Checkmark\";
-
         var checkmarkConfig = new CheckmarkConfig
         {
             DIR = inputDirectory
         };
         var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
-
-        CheckmarkJsonServices.CreateJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,
+        
+        CheckmarkJsonServices.WriteToJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,
                                             CheckmarkConfig.CheckmarkConfigFileName,
                                             json);
+    }
+    public static bool CheckForConfig()
+    {
+        return CheckmarkConfigServices.CheckForConfig();
     }
 }

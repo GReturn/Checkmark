@@ -11,9 +11,11 @@ public class CheckmarkPublicServices
         };
         CheckmarkAddToListServices.AddToList(newList);
     }
-    public static CheckmarkListTemplate ReadList()
+    public static (string itemName, string itemPriority) ReadList()
     {
-        return CheckmarkListServices.GetCheckmarkList();
+        CheckmarkListServices.GetCheckmarkList();
+
+        return (null, null);
     }
     public void UpdateList()
     {
