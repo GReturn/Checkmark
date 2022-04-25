@@ -2,7 +2,7 @@
 
 public class CheckmarkSetup
 {
-    // Set-up DIRECTORY and specify where to place future todos
+    // This one sets up DIRECTORY and specifies where to place future items in list
     public static void AddDirectory(string inputDirectory)
     {
         inputDirectory += @"\Checkmark\";
@@ -18,6 +18,6 @@ public class CheckmarkSetup
     }
     public static bool CheckForConfig()
     {
-        return CheckmarkConfigServices.CheckForConfig();
+        return CheckmarkConfig.CheckForConfig();
     }
 }

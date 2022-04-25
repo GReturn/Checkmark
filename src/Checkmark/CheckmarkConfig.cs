@@ -11,4 +11,14 @@ internal class CheckmarkConfig
     public string DIR { get; init; }
     [JsonPropertyName("Filename")]
     public string FILENAME { get; } = "my-checkmark-lists.json";
+
+    static internal bool CheckForConfig()
+    {
+        if (File.Exists(Path.Combine(CheckmarkConfigDirectory,
+                                         CheckmarkConfigFileName)))
+        {
+            return true;
+        }
+        return false;
+    }
 }
