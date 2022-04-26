@@ -2,11 +2,10 @@
 
 internal class CheckmarkCreateListServices
 {
-    static internal void AddFirstItemToList(CheckmarkListTemplate list)
+    static internal void AddFirstItemToList<T>(CheckmarkItem list)
     { 
-
         var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
-        var json = CheckmarkJsonServices.SerializeList<List<CheckmarkListTemplate>>(list);
+        var json = CheckmarkJsonServices.SerializeList<CheckmarkItem>(list);
         CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
     }
 }

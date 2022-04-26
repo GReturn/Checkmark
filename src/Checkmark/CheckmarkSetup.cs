@@ -20,4 +20,8 @@ public class CheckmarkSetup
     {
         return CheckmarkConfig.CheckForConfig();
     }
+    public static bool CheckForListFile()
+    {
+        return CheckmarkFileServices.CheckForExistingListFile();
+    }
 }

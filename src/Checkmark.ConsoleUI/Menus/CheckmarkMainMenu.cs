@@ -36,7 +36,7 @@ internal class CheckmarkMainMenu
         switch (command)
         {
             case "Create list":
-
+                CheckmarkCreateListMenu.ShowCreateListMenu();
                 break;
             case "Add new item to list":
                 CheckmarkAddToListMenu.ShowAddToListMenu();
