@@ -19,9 +19,22 @@ internal class CheckmarkFileServices
         var configPath = Path.Combine(checkmarkConfig.DIR,
                                             checkmarkConfig.FILENAME);
 
+        // TODO: Error: what if could not find my-checkmark-list.json.
+
         using var fileString = File.OpenRead(configPath);
         using var streamReader = new StreamReader(fileString,
                                         new UTF8Encoding(false));
         return streamReader.ReadToEnd();
+    }
+    static internal bool CheckForExistingListFile()
+    {
+        var configData = CheckmarkListServices.GetCheckmarkConfig();
+
+        if (File.Exists(Path.Combine(configData.DIR,
+                                         configData.FILENAME)))
+        {
+            return true;
+        }
+        return false;
     }
 }

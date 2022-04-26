@@ -10,20 +10,34 @@ internal class CheckmarkMainMenu
     {
         WriteLine("Welcome back to Checkmark!");
 
-        var command = Prompt.Select("What do you wish to do?",
+        if(CheckmarkSetup.CheckForListFile())
+        {
+            var command = Prompt.Select("What do you wish to do?",
+        new[]
+            {
+                "Add new item to list",
+                "Read my list",
+                "Delete an item",
+                "Exit application"
+            });
+            HandleCommand(command);
+        }
+
+        var commandInit = Prompt.Select("What do you wish to do?",
         new[]
         {
-            "Add new item to list",
-            "Read my list",
-            "Delete an item",
+            "Create list",
             "Exit application"
         });
-        HandleCommand(command);
+        HandleCommand(commandInit);
     }
     private static void HandleCommand(string command)
     {
         switch (command)
         {
+            case "Create list":
+
+                break;
             case "Add new item to list":
                 CheckmarkAddToListMenu.ShowAddToListMenu();
                 break;
@@ -31,7 +45,6 @@ internal class CheckmarkMainMenu
             case "Read my list":
                 CheckmarkViewListMenu.ShowViewMenu();
                 break;
-
             case "Delete an item":
                 WriteLine("Deleting");
                 break;
