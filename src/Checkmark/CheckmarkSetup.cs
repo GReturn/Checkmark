@@ -10,7 +10,7 @@ public class CheckmarkSetup
         {
             DIR = inputDirectory
         };
-        var json = CheckmarkJsonServices.Serialize(checkmarkConfig);
+        var json = CheckmarkJsonServices.SerializeConfig(checkmarkConfig);
         
         CheckmarkJsonServices.WriteToJsonFile(CheckmarkConfig.CheckmarkConfigDirectory,
                                             CheckmarkConfig.CheckmarkConfigFileName,

@@ -4,17 +4,35 @@ internal class CheckmarkJsonServices
     private static readonly JsonSerializerOptions jsonSerializerOptions = new()
     {
         AllowTrailingCommas = true,
-        WriteIndented = true,
-        IncludeFields = true,
+        WriteIndented = true
     };
-    public static string Serialize(CheckmarkListTemplate json)
+
+    #region Serializers
+
+    public static string SerializeList(CheckmarkListTemplate json)
     {
         return JsonSerializer.Serialize(json, jsonSerializerOptions);
     }
-    public static string Serialize(CheckmarkConfig json)
+    public static string SerializeConfig(CheckmarkConfig json)
     {
         return JsonSerializer.Serialize(json, jsonSerializerOptions);
     }
+
+    #endregion
+
+    #region Deserializers
+
+    public static CheckmarkConfig DeserializeConfigFile(string configFile)
+    {
+        return JsonSerializer.Deserialize<CheckmarkConfig>(configFile, jsonSerializerOptions);
+    }
+    public static CheckmarkListTemplate DeserializeList(string listFile)
+    {
+        return JsonSerializer.Deserialize<CheckmarkListTemplate>(listFile, jsonSerializerOptions);
+    }
+
+    #endregion
+
     public static void WriteToJsonFile(string directory, string filename, string json)
     {
         var pathToFile = Path.Combine(directory, filename);

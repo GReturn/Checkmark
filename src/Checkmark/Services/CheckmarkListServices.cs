@@ -1,26 +1,18 @@
-﻿using System.Text;
-
-namespace Checkmark.Services;
+﻿namespace Checkmark.Services;
 
 internal class CheckmarkListServices
 {
-    private static readonly JsonSerializerOptions jsonSerializerOptions = new()
-    {
-        AllowTrailingCommas = true,
-        WriteIndented = true,
-    };
-
     public static CheckmarkConfig GetCheckmarkConfig()
     {
         string configFile = CheckmarkFileServices.GetConfigFileData();
-        return JsonSerializer.Deserialize<CheckmarkConfig>(configFile, jsonSerializerOptions);
+        return CheckmarkJsonServices.DeserializeConfigFile(configFile);
     }
-    public static CheckmarkListTemplate GetCheckmarkList() // TODO: Make async. Run before Sharprompt instance in CheckmarkView.cs
+    public static CheckmarkListTemplate GetCheckmarkList()
     {
         var checkmarkConfig = GetCheckmarkConfig();
         var listJson = CheckmarkFileServices.GetListDataFromConfigFile(checkmarkConfig);
 
-        return JsonSerializer.Deserialize<CheckmarkListTemplate>(listJson);
+        return CheckmarkJsonServices.DeserializeList(listJson);
     }
 
     /* TODO: generate IDs for items in list. Just generate ID in numerical order using for loop. 
