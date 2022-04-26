@@ -14,7 +14,7 @@ internal class CheckmarkListServices
         var checkmarkConfig = GetCheckmarkConfig();
         var listJson = CheckmarkFileServices.GetListDataFromConfigFile(checkmarkConfig);
 
-        return CheckmarkJsonServices.DeserializeList<List<CheckmarkItem>>(listJson);
+        return CheckmarkJsonServices.DeserializeList(listJson);
     }
 
     /* TODO: generate IDs for items in list. Just generate ID in numerical order using for loop. 

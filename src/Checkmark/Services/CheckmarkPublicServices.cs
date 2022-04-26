@@ -4,12 +4,13 @@ public class CheckmarkPublicServices
 {
     public static void CheckmarkCreateList(string itemName, string itemPriority)
     {
-        var newList = new CheckmarkItem
+
+        var newItem = new CheckmarkItem
         {
             TodoItem = itemName,
             Priority = itemPriority
         };
-        CheckmarkCreateListServices.AddFirstItemToList<CheckmarkItem>(newList);
+        CheckmarkCreateListServices.AddFirstItemToList<CheckmarkItem>(newItem);
     }
     public static void CheckmarkAddToList(string itemName, string itemPriority)
     {
@@ -20,7 +21,7 @@ public class CheckmarkPublicServices
             TodoItem = itemName,
             Priority = itemPriority
         };
-        CheckmarkAddToListServices.AddToList(newList);
+        CheckmarkAddToListServices.AddToList<CheckmarkItem>(newList);
     }
     public static (string itemName, string itemPriority) ReadList()
     {

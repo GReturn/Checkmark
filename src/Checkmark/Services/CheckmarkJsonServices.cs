@@ -9,7 +9,7 @@ internal class CheckmarkJsonServices
 
     #region Serializers
 
-    public static string SerializeList<T>(CheckmarkItem json)
+    public static string SerializeList<T>(List<CheckmarkItem> json)
     {
         return JsonSerializer.Serialize(json, jsonSerializerOptions);
     }
@@ -26,7 +26,7 @@ internal class CheckmarkJsonServices
     {
         return JsonSerializer.Deserialize<CheckmarkConfig>(configFile, jsonSerializerOptions);
     }
-    public static List<CheckmarkItem> DeserializeList<List>(string listFile)
+    public static List<CheckmarkItem> DeserializeList(string listFile)
     {
         return JsonSerializer.Deserialize<List<CheckmarkItem>>(listFile, jsonSerializerOptions);
     }
