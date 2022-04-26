@@ -18,7 +18,7 @@ internal class CheckmarkViewListMenu
         {
             case "In a table":
             default:
-                TableCreator.MakeListTable(list);
+                //TableCreator.MakeListTable(list);
                 break;
             
         }

@@ -1,4 +1,6 @@
-﻿namespace Checkmark.Services;
+﻿using System.Collections.Generic;
+
+namespace Checkmark.Services;
 
 internal class CheckmarkListServices
 {
@@ -7,12 +9,12 @@ internal class CheckmarkListServices
         string configFile = CheckmarkFileServices.GetConfigFileData();
         return CheckmarkJsonServices.DeserializeConfigFile(configFile);
     }
-    public static CheckmarkListTemplate GetCheckmarkList()
+    public static List<CheckmarkListTemplate> GetCheckmarkList()
     {
         var checkmarkConfig = GetCheckmarkConfig();
         var listJson = CheckmarkFileServices.GetListDataFromConfigFile(checkmarkConfig);
 
-        return CheckmarkJsonServices.DeserializeList(listJson);
+        return CheckmarkJsonServices.DeserializeList<List<CheckmarkListTemplate>>(listJson);
     }
 
     /* TODO: generate IDs for items in list. Just generate ID in numerical order using for loop. 
