@@ -4,6 +4,13 @@ internal class CheckmarkAddToListMenu
 {
     public static void ShowAddToListMenu()
     {
+        var confirmToCreateNewList = ConfirmToCreateNewList();
+        if (confirmToCreateNewList == false)
+        {
+            WriteLine("No list will be created. Thank you for using Checkmark.");
+            Environment.Exit(0);
+        }
+
         var newItem = Prompt.Input<string>("Item name?");
         var itemPriority = Prompt.Select("How important is this item?",
             new[] {
@@ -15,7 +22,24 @@ internal class CheckmarkAddToListMenu
 
         if (confirm)
         {
-            CheckmarkPublicServices.CheckmarkAddToList(newItem,itemPriority);
+            switch (confirmToCreateNewList)
+            {
+                case true:
+                    CheckmarkPublicServices.CheckmarkCreateList(newItem, itemPriority);
+                    break;
+                case null:
+                    CheckmarkPublicServices.CheckmarkAddToList(newItem, itemPriority);
+                    break;
+            }
         }
+    }
+    public static bool? ConfirmToCreateNewList()
+    {
+        if (!CheckmarkSetup.CheckForListFile())
+        {
+            var confirmForCreateNewList = Prompt.Confirm($"Oh no! No list was found. Create a new list?");
+            return confirmForCreateNewList;
+        }
+        return null;
     }
 }
