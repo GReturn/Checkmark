@@ -7,7 +7,7 @@ internal class CheckmarkAddToListMenu
     public static void ShowAddToListMenu()
     {
         var confirmToCreateNewList = ConfirmToCreateNewList();
-        if (confirmToCreateNewList == false)
+        if (confirmToCreateNewList is false)
         {
             WriteLine("No list will be created. Thank you for using Checkmark.");
             Environment.Exit(0);
