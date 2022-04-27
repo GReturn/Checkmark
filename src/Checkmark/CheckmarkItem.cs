@@ -1,6 +1,6 @@
 ﻿namespace Checkmark;
 
-internal class CheckmarkListTemplate
+internal class CheckmarkItem
 {
     [JsonPropertyName("Title")]
     public string TodoItem { get; set; }
@@ -14,8 +14,7 @@ internal class CheckmarkListTemplate
      * Status: To do, doing, done
      */
 }
-    // TODO: DO THIS LATER AFTER COMPLETING VIEW FEATURE:
-    //public class CheckmarkList : ArrayList
-    //{
-    //    public IList<CheckmarkList> ListTitle { get; set; }
-    //}
+//internal class CheckmarkListContainer
+//{
+//    public List<CheckmarkItem> CheckmarkItem { get; set; }
+//}

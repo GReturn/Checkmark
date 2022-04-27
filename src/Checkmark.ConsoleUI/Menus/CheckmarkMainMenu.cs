@@ -3,41 +3,26 @@
 internal class CheckmarkMainMenu
 {
     public static void Run()
-    {           
+    {
+        WriteLine("Welcome back to Checkmark!");
         InteractiveMode();
     }
     private static void InteractiveMode()
     {
-        WriteLine("Welcome back to Checkmark!");
-
-        if(CheckmarkSetup.CheckForListFile())
+        var command = Prompt.Select("What do you wish to do?",
+    new[]
         {
-            var command = Prompt.Select("What do you wish to do?",
-        new[]
-            {
-                "Add new item to list",
-                "Read my list",
-                "Delete an item",
-                "Exit application"
-            });
-            HandleCommand(command);
-        }
-
-        var commandInit = Prompt.Select("What do you wish to do?",
-        new[]
-        {
-            "Create list",
+            "Add new item to list",
+            "Read my list",
+            "Delete an item",
             "Exit application"
         });
-        HandleCommand(commandInit);
+        HandleCommand(command);
     }
     private static void HandleCommand(string command)
     {
         switch (command)
         {
-            case "Create list":
-
-                break;
             case "Add new item to list":
                 CheckmarkAddToListMenu.ShowAddToListMenu();
                 break;
@@ -50,6 +35,8 @@ internal class CheckmarkMainMenu
                 break;
 
             case "Exit application":
+
+                WriteLine("Thank you for using Checkmark.");
                 Environment.Exit(0);
                 break;
         }

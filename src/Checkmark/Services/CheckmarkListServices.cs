@@ -9,12 +9,12 @@ internal class CheckmarkListServices
         string configFile = CheckmarkFileServices.GetConfigFileData();
         return CheckmarkJsonServices.DeserializeConfigFile(configFile);
     }
-    public static List<CheckmarkListTemplate> GetCheckmarkList()
+    public static List<CheckmarkItem> GetCheckmarkList()
     {
         var checkmarkConfig = GetCheckmarkConfig();
         var listJson = CheckmarkFileServices.GetListDataFromConfigFile(checkmarkConfig);
 
-        return CheckmarkJsonServices.DeserializeList<List<CheckmarkListTemplate>>(listJson);
+        return CheckmarkJsonServices.DeserializeList(listJson);
     }
 
     /* TODO: generate IDs for items in list. Just generate ID in numerical order using for loop. 
