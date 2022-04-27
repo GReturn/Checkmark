@@ -1,39 +1,53 @@
-﻿/*
- * This class provides JSON (JavaSctipt Object Notation) de/serialization services.
- */
-
-using System.Text.Json;
-using Checkmark.Templates;
-using System.IO;
-
-namespace Checkmark.Services
+﻿namespace Checkmark.Services;
+internal class CheckmarkJsonServices
 {
-    public class CheckmarkJsonServices
+    private static readonly JsonSerializerOptions jsonSerializerOptions = new()
     {
-        private static readonly JsonSerializerOptions jsonSerializerOptions = new()
-        {
-            AllowTrailingCommas = true,
-            WriteIndented = true,
-        };
+        AllowTrailingCommas = true,
+        WriteIndented = true
+    };
 
-        public static string Serialize(CheckmarkList json)
-        {
-            return JsonSerializer.Serialize(json, jsonSerializerOptions);
-        }
-        public static string Serialize(CheckmarkConfig json)
-        {
-            return JsonSerializer.Serialize(json, jsonSerializerOptions);
-        }
+    #region Serializers
 
-        public static void CreateJsonFile(string directory, string filename, string json)
-        {
-            var pathToFile = Path.Combine(directory, filename);
-            Directory.CreateDirectory(directory);
+    public static string SerializeList<T>(List<CheckmarkItem> json)
+    {
+        return JsonSerializer.Serialize(json, jsonSerializerOptions);
+    }
+    public static string SerializeConfig(CheckmarkConfig json)
+    {
+        return JsonSerializer.Serialize(json, jsonSerializerOptions);
+    }
 
-            if (Directory.Exists(directory))
-            {
-                File.WriteAllText(pathToFile, json);
-            }
+    #endregion
+
+    #region Deserializers
+
+    public static CheckmarkConfig DeserializeConfigFile(string configFile)
+    {
+        return JsonSerializer.Deserialize<CheckmarkConfig>(configFile, jsonSerializerOptions);
+    }
+    public static List<CheckmarkItem> DeserializeList(string listFile)
+    {
+        return JsonSerializer.Deserialize<List<CheckmarkItem>>(listFile, jsonSerializerOptions);
+    }
+
+    #endregion
+
+    public static void WriteToJsonFile(string directory, string filename, string json)
+    {
+        var pathToFile = Path.Combine(directory, filename);
+
+        /* 
+         * If directory exists, CreateDirectory() will NOT create another directory.
+         * https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=net-6.0
+         * 
+         * This is why, in the next line, if directory exists, we simply overwrite it.
+         */
+        Directory.CreateDirectory(directory);
+
+        if (Directory.Exists(directory))
+        {
+            File.WriteAllText(pathToFile, json);
         }
     }
 }
