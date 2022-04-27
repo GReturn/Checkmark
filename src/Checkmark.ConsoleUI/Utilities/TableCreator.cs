@@ -4,23 +4,25 @@ namespace Checkmark.ConsoleUI.Utilities;
 
 internal class TableCreator
 {
-    //private static void MakeListTable(CheckmarkList list)
-    //{
-    //    var table = new Table("Id", "Item", "Priority", "Status");
+    static internal void MakeListTable()
+    {
+        var list = CheckmarkPublicServices.ReadList();
 
-    //    // TODO: Make list into an array. Reiterate foreach() table.AddRow.
+        var table = new Table("Id", "Item", "Priority", "Status");
 
-    //    table.AddRow(1, 2, 3, 4)
-    //         .AddRow($"No ID system", $"{list.TodoItem}", $"{list.Priority}", $"{list.Status}");
+        // TODO: Make list into an array. Reiterate foreach() table.AddRow.
 
-    //    Write(table.ToString());
-    //    WriteLine();
+        table.AddRow(1, 2, 3, 4)
+             .AddRow($"No ID system", $"{list.itemName}", $"{list.itemPriority}");
 
-    //    var rows = Enumerable.Repeat(new CheckmarkList(), 10);
+        Write(table.ToString());
+        WriteLine();
 
-    //    ConsoleTable
-    //        .From<CheckmarkList>(rows)
-    //        .Configure(o => o.NumberAlignment = Alignment.Right)
-    //        .Write(Format.Alternative);
-    //}
+        var rows = Enumerable.Repeat(new CheckmarkList(), 10);
+
+        ConsoleTable
+            .From<CheckmarkList>(rows)
+            .Configure(o => o.NumberAlignment = Alignment.Right)
+            .Write(Format.Alternative);
+    }
 }
