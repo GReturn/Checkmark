@@ -4,12 +4,14 @@ internal class CheckmarkSetupMenu
 {
     public static void ShowSetupMenu()
     {
-        var ready = Prompt.Confirm("Before you start writing your todo lists, please finish the setup.");
+        var ready = Prompt
+            .Confirm("Before you start writing your todo lists, please finish the setup.");
 
         Input:
         if (ready)
         {
-            var userDirectory = Prompt.Input<string>(@"Where do you want to save your lists? e.g. C:\Temp");
+            var userDirectory = Prompt
+                .Input<string>(@"Where do you want to save your lists? e.g. C:\Temp");
 
             if(Directory.Exists(userDirectory))
             {
