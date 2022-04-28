@@ -13,6 +13,7 @@ internal class CheckmarkMainMenu
         {
             "Add new item to list / Create new list",
             "Read my list",
+            "Edit my list",
             "Delete an item",
             "Exit application"
         });
@@ -28,6 +29,9 @@ internal class CheckmarkMainMenu
 
             case "Read my list":
                 CheckmarkViewListMenu.ShowViewMenu();
+                break;
+            case "Edit my list":
+                WriteLine("Editing");
                 break;
             case "Delete an item":
                 WriteLine("Deleting");
