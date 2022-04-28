@@ -24,8 +24,6 @@ public class CheckmarkPublicServices
     public static List<CheckmarkItem> ReadList()
     {
         return CheckmarkListServices.GetCheckmarkList();
-
-        
     }
     public void UpdateList()
     {        

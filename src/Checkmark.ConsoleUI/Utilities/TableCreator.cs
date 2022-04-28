@@ -1,6 +1,4 @@
-﻿using BetterConsoleTables;
-
-namespace Checkmark.ConsoleUI.Utilities;
+﻿namespace Checkmark.ConsoleUI.Utilities;
 
 internal class TableCreator
 {

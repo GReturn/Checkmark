@@ -1,6 +1,4 @@
-﻿using static Checkmark.Services.CheckmarkPublicServices;
-
-namespace Checkmark.ConsoleUI.Menus;
+﻿namespace Checkmark.ConsoleUI.Menus;
 
 internal class CheckmarkAddToListMenu
 {

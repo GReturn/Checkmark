@@ -1,6 +1,4 @@
-﻿using Checkmark.ConsoleUI.Menus;
-
-namespace Checkmark.ConsoleUI;
+﻿namespace Checkmark.ConsoleUI;
 
 internal class MenuUI
 {
