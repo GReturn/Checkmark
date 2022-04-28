@@ -1,6 +1,6 @@
 ﻿namespace Checkmark;
 
-internal class CheckmarkItem
+public class CheckmarkItem
 {
     [JsonPropertyName("Title")]
     public string TodoItem { get; set; }
