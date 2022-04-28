@@ -5,24 +5,24 @@ public class CheckmarkPublicServices
     public static void CheckmarkCreateList(string itemName, string itemPriority)
     {
 
+        var newItemInNewList = new CheckmarkItem
+        {
+            TodoItem = itemName,
+            Priority = itemPriority
+        };
+        CheckmarkCreateListServices.AddFirstItemToList<CheckmarkItem>(newItemInNewList);
+    }
+    public static void CheckmarkAddToList(string itemName, string itemPriority)
+    {
         var newItem = new CheckmarkItem
         {
             TodoItem = itemName,
             Priority = itemPriority
         };
-        CheckmarkCreateListServices.AddFirstItemToList<CheckmarkItem>(newItem);
+        CheckmarkAddToListServices.AddToList<CheckmarkItem>(newItem);
     }
-    public static void CheckmarkAddToList(string itemName, string itemPriority)
-    {
-        // TODO: https://stackoverflow.com/questions/33081102/json-add-new-object-to-existing-json-file-c-sharp
 
-        var newList = new CheckmarkItem
-        {
-            TodoItem = itemName,
-            Priority = itemPriority
-        };
-        CheckmarkAddToListServices.AddToList<CheckmarkItem>(newList);
-    }
+    // TODO: For table
     public static (string itemName, string itemPriority) ReadList()
     {
         // TODO: here:

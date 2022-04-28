@@ -18,10 +18,10 @@ internal class TableCreator
         Write(table.ToString());
         WriteLine();
 
-        var rows = Enumerable.Repeat(new CheckmarkList(), 10);
+        var rows = Enumerable.Repeat(new CheckmarkItem(), 10);
 
-        ConsoleTable
-            .From<CheckmarkList>(rows)
+        Table
+            .From<CheckmarkItem>(rows)
             .Configure(o => o.NumberAlignment = Alignment.Right)
             .Write(Format.Alternative);
     }

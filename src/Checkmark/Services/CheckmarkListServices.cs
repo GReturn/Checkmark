@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Checkmark.Services;
+﻿namespace Checkmark.Services;
 
 internal class CheckmarkListServices
 {

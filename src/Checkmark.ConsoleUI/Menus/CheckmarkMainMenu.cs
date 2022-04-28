@@ -32,9 +32,7 @@ internal class CheckmarkMainMenu
             case "Delete an item":
                 WriteLine("Deleting");
                 break;
-
             case "Exit application":
-
                 WriteLine("Thank you for using Checkmark.");
                 Environment.Exit(0);
                 break;

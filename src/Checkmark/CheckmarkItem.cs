@@ -14,7 +14,3 @@ internal class CheckmarkItem
      * Status: To do, doing, done
      */
 }
-//internal class CheckmarkListContainer
-//{
-//    public List<CheckmarkItem> CheckmarkItem { get; set; }
-//}

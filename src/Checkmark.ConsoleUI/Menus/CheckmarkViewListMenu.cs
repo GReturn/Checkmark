@@ -21,7 +21,6 @@ internal class CheckmarkViewListMenu
             default:
                 TableCreator.MakeListTable();
                 break;
-            
         }
     }
     private static void CheckForListFile()

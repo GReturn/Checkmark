@@ -37,7 +37,8 @@ internal class CheckmarkJsonServices
     {
         var pathToFile = Path.Combine(directory, filename);
 
-        /* 
+        /* NOTE:
+         * 
          * If directory exists, CreateDirectory() will NOT create another directory.
          * https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=net-6.0
          * 
