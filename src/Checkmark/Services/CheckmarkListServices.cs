@@ -14,7 +14,6 @@ internal class CheckmarkListServices
 
         return CheckmarkJsonServices.DeserializeList(listJson);
     }
-
     /* TODO: generate IDs for items in list. Just generate ID in numerical order using for loop. 
      * No need to using ID generators. That would be overengineering it!
      */
