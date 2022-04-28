@@ -9,7 +9,8 @@ internal class CheckmarkViewListMenu
         var viewListChoice = Prompt
             .Select("How do you want to view your lists?",
             new[] {
-                "In a table"
+                "In a table",
+                "Cancel"
             });
         HandleViewChoice(viewListChoice);
     }
@@ -18,8 +19,10 @@ internal class CheckmarkViewListMenu
         switch (viewChoice)
         {
             case "In a table":
-            default:
                 TableCreator.MakeListTable();
+                break;
+            case "Cancel":
+                CheckmarkMainMenu.Run();
                 break;
         }
     }
