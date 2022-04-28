@@ -4,7 +4,8 @@ internal class CheckmarkListServices
 {
     public static CheckmarkConfig GetCheckmarkConfig()
     {
-        string configFile = CheckmarkFileServices.GetConfigFileData();
+        var configFile = CheckmarkFileServices.GetConfigFileData();
+
         return CheckmarkJsonServices.DeserializeConfigFile(configFile);
     }
     public static List<CheckmarkItem> GetCheckmarkList()

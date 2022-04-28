@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Checkmark.Services;
+﻿namespace Checkmark.Services;
 
 internal class CheckmarkFileServices
 {

@@ -19,10 +19,11 @@ internal class CheckmarkCreateListServices
         {
             item
         };
-
         var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
-
         var json = CheckmarkJsonServices.SerializeList<CheckmarkItem>(newList);
-        CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
+
+        CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, 
+                                               checkmarkConfig.FILENAME, 
+                                                       json);
     }
 }
