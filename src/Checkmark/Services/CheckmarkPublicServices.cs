@@ -21,14 +21,11 @@ public class CheckmarkPublicServices
         };
         CheckmarkAddToListServices.AddToList<CheckmarkItem>(newItem);
     }
-
-    // TODO: For table
-    public static (string itemName, string itemPriority) ReadList()
+    public static List<CheckmarkItem> ReadList()
     {
-        // TODO: here:
-        CheckmarkListServices.GetCheckmarkList();
+        return CheckmarkListServices.GetCheckmarkList();
 
-        return (null, null);
+        
     }
     public void UpdateList()
     {        

@@ -8,21 +8,17 @@ internal class TableCreator
     {
         var list = CheckmarkPublicServices.ReadList();
 
-        var table = new Table("Id", "Item", "Priority", "Status");
+        var tableHeaders = new[]
+        {
+            new ColumnHeader("Item Name", Alignment.Center),
+            new ColumnHeader("Priority Level", Alignment.Center)
+        };
+        var table = new Table(tableHeaders);
 
-        // TODO: Make list into an array. Reiterate foreach() table.AddRow.
-
-        table.AddRow(1, 2, 3, 4)
-             .AddRow($"No ID system", $"{list.itemName}", $"{list.itemPriority}");
-
-        Write(table.ToString());
-        WriteLine();
-
-        var rows = Enumerable.Repeat(new CheckmarkItem(), 10);
-
-        Table
-            .From<CheckmarkItem>(rows)
-            .Configure(o => o.NumberAlignment = Alignment.Right)
-            .Write(Format.Alternative);
+        foreach (var item in list)
+        {
+            table.AddRow(item.TodoItem, item.Priority);
+        }
+        WriteLine(table.ToString());
     }
 }
