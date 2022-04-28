@@ -7,6 +7,7 @@ internal class CheckmarkSetupMenu
         var ready = Prompt
             .Confirm("Before you start writing your todo lists, please finish the setup.");
 
+        // Do not judge me, mortal. Labels and gotos have their uses.
         Input:
         if (ready)
         {
