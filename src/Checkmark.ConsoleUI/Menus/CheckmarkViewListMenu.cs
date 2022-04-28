@@ -4,7 +4,10 @@ internal class CheckmarkViewListMenu
 {
     public static void ShowViewMenu()
     {
-        var viewListChoice = Prompt.Select("How do you want to view your lists?",
+        CheckForListFile();
+
+        var viewListChoice = Prompt
+            .Select("How do you want to view your lists?",
             new[] {
                 "In a table"
             });
@@ -12,15 +15,20 @@ internal class CheckmarkViewListMenu
     }
     private static void HandleViewChoice(string viewChoice)
     {
-        var list = CheckmarkPublicServices.ReadList();
-
         switch (viewChoice)
         {
             case "In a table":
             default:
-                //TableCreator.MakeListTable(list);
+                TableCreator.MakeListTable();
                 break;
-            
+        }
+    }
+    private static void CheckForListFile()
+    {
+        if(!CheckmarkSetup.CheckForListFile())
+        {
+            WriteLine("No list file was detected. Please create a list first.");
+            CheckmarkMainMenu.Run();
         }
     }
 }
