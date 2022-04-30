@@ -4,7 +4,7 @@ internal class CheckmarkViewListMenu
 {
     public static void ShowViewMenu()
     {
-        CheckForListFile();
+        ListFileChecker.CheckForListFile();
 
         var viewListChoice = Prompt
             .Select("How do you want to view your lists?",
@@ -24,14 +24,6 @@ internal class CheckmarkViewListMenu
             case "Cancel":
                 CheckmarkMainMenu.Run();
                 break;
-        }
-    }
-    private static void CheckForListFile()
-    {
-        if(!CheckmarkSetup.CheckForListFile())
-        {
-            WriteLine("No list file was detected. Please create a list first.");
-            CheckmarkMainMenu.Run();
         }
     }
 }
