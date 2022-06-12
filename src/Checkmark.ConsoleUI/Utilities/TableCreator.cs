@@ -1,10 +1,12 @@
-﻿namespace Checkmark.ConsoleUI.Utilities;
+﻿using BetterConsoleTables;
+
+namespace Checkmark.ConsoleUI.Utilities;
 
 internal class TableCreator
 {
     static internal void MakeListTable()
     {
-        var list = CheckmarkPublicServices.ReadList();
+        var list = ReadList();
 
         var tableHeaders = new[]
         {
@@ -17,6 +19,8 @@ internal class TableCreator
         {
             table.AddRow(item.TodoItem, item.Priority);
         }
+        table.Config = TableConfiguration.Unicode();
+
         WriteLine(table.ToString());
     }
 }
