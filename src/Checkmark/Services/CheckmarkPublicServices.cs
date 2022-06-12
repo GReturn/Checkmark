@@ -25,8 +25,9 @@ public class CheckmarkPublicServices
     {
         return CheckmarkListServices.GetCheckmarkList();
     }
-    public void UpdateList()
-    {        
+    public static void UpdateList(int itemID, string category)
+    {
+
     }
     public void DeleteList()
     {
