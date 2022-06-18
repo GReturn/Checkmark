@@ -3,16 +3,16 @@
 public class CheckmarkItem
 {
     [JsonPropertyName("Id")]
-    public int ID { get; internal set; } = 1;
+    public int ID { get; set; } = 1;
 
     [JsonPropertyName("Title")]
-    public string TodoItem { get; internal set; }
+    public string TodoItem { get; set; }
 
     [JsonPropertyName("Priority")]
-    public string Priority { get; internal set; }
+    public string Priority { get; set; }
 
     [JsonPropertyName("Status")]
-    public string Status { get; internal set; } = "To do";
+    public string Status { get; set; } = "To do";
     /*
      * Status: To do, doing, done
      */
