@@ -2,7 +2,7 @@
 
 internal class CheckmarkCreateListServices
 {
-    // TODO: study how <T> in method works!
+    // TODO: study how generic type <T> in method works!
     static internal void AddFirstItemToList<T>(CheckmarkItem item)
     {
         /* NOTE:
