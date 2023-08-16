@@ -9,6 +9,8 @@ internal class CheckmarkAddToListServices
 
         listData.Add(newItem);
 
+        CheckmarkListServices.GenerateIDForItems(listData);
+
         var json = CheckmarkJsonServices.SerializeList<CheckmarkItem>(listData);
 
         CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, 
