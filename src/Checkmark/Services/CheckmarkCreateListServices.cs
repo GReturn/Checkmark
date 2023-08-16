@@ -2,9 +2,12 @@
 
 internal class CheckmarkCreateListServices
 {
-    static internal void AddFirstItemToList<T>(CheckmarkItem list)
+    // TODO: study how generic type <T> in method works!
+    static internal void AddFirstItemToList<T>(CheckmarkItem item)
     {
-        /* The code below is just the same as this:
+        /* NOTE:
+         * 
+         * The code below is just the same as this:
          * 
          * var newList = new List<CheckmarkItem>();
          * newList.Add(list);
@@ -14,12 +17,13 @@ internal class CheckmarkCreateListServices
 
         var newList = new List<CheckmarkItem>
         {
-            list
+            item
         };
-
         var checkmarkConfig = CheckmarkListServices.GetCheckmarkConfig();
-
         var json = CheckmarkJsonServices.SerializeList<CheckmarkItem>(newList);
-        CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, checkmarkConfig.FILENAME, json);
+
+        CheckmarkJsonServices.WriteToJsonFile(checkmarkConfig.DIR, 
+                                               checkmarkConfig.FILENAME, 
+                                                       json);
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Checkmark.Services;
+﻿namespace Checkmark.Services;
 
 internal class CheckmarkFileServices
 {
@@ -18,8 +16,6 @@ internal class CheckmarkFileServices
     {
         var configPath = Path.Combine(checkmarkConfig.DIR,
                                             checkmarkConfig.FILENAME);
-
-        // TODO: Error: what if could not find my-checkmark-list.json.
 
         using var fileString = File.OpenRead(configPath);
         using var streamReader = new StreamReader(fileString,

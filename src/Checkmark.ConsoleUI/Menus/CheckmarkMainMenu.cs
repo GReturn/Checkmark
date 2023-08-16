@@ -4,7 +4,6 @@ internal class CheckmarkMainMenu
 {
     public static void Run()
     {
-        WriteLine("Welcome back to Checkmark!");
         InteractiveMode();
     }
     private static void InteractiveMode()
@@ -12,8 +11,9 @@ internal class CheckmarkMainMenu
         var command = Prompt.Select("What do you wish to do?",
     new[]
         {
-            "Add new item to list",
+            "Add new item to list / Create new list",
             "Read my list",
+            "Edit my list",
             "Delete an item",
             "Exit application"
         });
@@ -23,19 +23,20 @@ internal class CheckmarkMainMenu
     {
         switch (command)
         {
-            case "Add new item to list":
+            case "Add new item to list / Create new list":
                 CheckmarkAddToListMenu.ShowAddToListMenu();
                 break;
 
             case "Read my list":
                 CheckmarkViewListMenu.ShowViewMenu();
                 break;
+            case "Edit my list":
+                WriteLine("Editing");
+                break;
             case "Delete an item":
                 WriteLine("Deleting");
                 break;
-
             case "Exit application":
-
                 WriteLine("Thank you for using Checkmark.");
                 Environment.Exit(0);
                 break;

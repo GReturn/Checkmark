@@ -1,4 +1,5 @@
 ﻿namespace Checkmark.Services;
+
 internal class CheckmarkJsonServices
 {
     private static readonly JsonSerializerOptions jsonSerializerOptions = new()
@@ -7,6 +8,7 @@ internal class CheckmarkJsonServices
         WriteIndented = true
     };
 
+    // Yes, I'm using regions. And?
     #region Serializers
 
     public static string SerializeList<T>(List<CheckmarkItem> json)
@@ -20,6 +22,7 @@ internal class CheckmarkJsonServices
 
     #endregion
 
+    // Gonna cry because I'm using regions?
     #region Deserializers
 
     public static CheckmarkConfig DeserializeConfigFile(string configFile)
@@ -37,11 +40,12 @@ internal class CheckmarkJsonServices
     {
         var pathToFile = Path.Combine(directory, filename);
 
-        /* 
+        /* NOTE:
+         * 
          * If directory exists, CreateDirectory() will NOT create another directory.
          * https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=net-6.0
          * 
-         * This is why, in the next line, if directory exists, we simply overwrite it.
+         * This is why, in the next line, if directory exists, we simply overwrite the file.
          */
         Directory.CreateDirectory(directory);
 

@@ -5,7 +5,7 @@ internal class CheckmarkAddToListMenu
     public static void ShowAddToListMenu()
     {
         var confirmToCreateNewList = ConfirmToCreateNewList();
-        if (confirmToCreateNewList == false)
+        if (confirmToCreateNewList is false)
         {
             WriteLine("No list will be created. Thank you for using Checkmark.");
             Environment.Exit(0);
@@ -25,10 +25,10 @@ internal class CheckmarkAddToListMenu
             switch (confirmToCreateNewList)
             {
                 case true:
-                    CheckmarkPublicServices.CheckmarkCreateList(newItem, itemPriority);
+                    CheckmarkCreateList(newItem, itemPriority);
                     break;
                 case null:
-                    CheckmarkPublicServices.CheckmarkAddToList(newItem, itemPriority);
+                    CheckmarkAddToList(newItem, itemPriority);
                     break;
             }
         }
@@ -37,7 +37,8 @@ internal class CheckmarkAddToListMenu
     {
         if (!CheckmarkSetup.CheckForListFile())
         {
-            var confirmForCreateNewList = Prompt.Confirm($"Oh no! No list was found. Create a new list?");
+            var confirmForCreateNewList = Prompt
+                .Confirm($"Oh no! No list was found. Create a new list?");
             return confirmForCreateNewList;
         }
         return null;

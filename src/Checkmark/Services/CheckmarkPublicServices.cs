@@ -1,39 +1,68 @@
-﻿namespace Checkmark.Services;
+﻿using System.Linq;
+
+namespace Checkmark.Services;
 
 public class CheckmarkPublicServices
 {
     public static void CheckmarkCreateList(string itemName, string itemPriority)
     {
-
+        var newItemInNewList = new CheckmarkItem
+        {
+            TodoItem = itemName,
+            Priority = itemPriority
+        };
+        CheckmarkCreateListServices.AddFirstItemToList<CheckmarkItem>(newItemInNewList);
+    }
+    public static void CheckmarkAddToList(string itemName, string itemPriority)
+    {
         var newItem = new CheckmarkItem
         {
             TodoItem = itemName,
             Priority = itemPriority
         };
-        CheckmarkCreateListServices.AddFirstItemToList<CheckmarkItem>(newItem);
+        CheckmarkAddToListServices.AddToList<CheckmarkItem>(newItem);
     }
-    public static void CheckmarkAddToList(string itemName, string itemPriority)
+    public static List<CheckmarkItem> ReadList()
     {
-        // TODO: https://stackoverflow.com/questions/33081102/json-add-new-object-to-existing-json-file-c-sharp
+        return CheckmarkListServices.GetCheckmarkList();
+    }
+    public static void UpdateList(int itemID, string category, string renameWord)
+    {
+        var list = ReadList();
 
-        var newList = new CheckmarkItem
+        foreach(var item in list)
         {
-            TodoItem = itemName,
-            Priority = itemPriority
-        };
-        CheckmarkAddToListServices.AddToList<CheckmarkItem>(newList);
-    }
-    public static (string itemName, string itemPriority) ReadList()
-    {
-        // TODO: here:
-        CheckmarkListServices.GetCheckmarkList();
+            if(itemID == item.ID)
+            {
+                item.TodoItem = renameWord;
 
-        return (null, null);
+                switch (category)
+                {
+                    case "Priority":
+                        item.Priority
+                        break;
+                }
+            }
+        }
     }
-    public void UpdateList()
-    {        
+    public static void UpdateList(int itemID, string category)
+    {
+        var list = ReadList();
+
+        foreach (var item in list)
+        {
+            if (itemID == item.ID)
+            {
+                switch(category)
+                {
+                    case "Priority":
+                        item.Priority
+                        break;
+                }
+            }
+        }
     }
-    public void DeleteList()
+    public static void DeleteList()
     {
     }
 }

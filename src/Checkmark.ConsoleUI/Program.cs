@@ -1,12 +1,10 @@
-﻿using Checkmark.ConsoleUI.Menus;
-
-namespace Checkmark.ConsoleUI;
+﻿namespace Checkmark.ConsoleUI;
 
 internal class MenuUI
 {
     private static void Main()
     {
-        WriteLine("Welcome to Checkmark");
+        WriteLine("Welcome to Checkmark!");
 
         if (!CheckmarkSetup.CheckForConfig()) 
         {
