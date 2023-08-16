@@ -1,4 +1,6 @@
-﻿namespace Checkmark.Services;
+﻿using System.Linq;
+
+namespace Checkmark.Services;
 
 public class CheckmarkPublicServices
 {
@@ -26,35 +28,39 @@ public class CheckmarkPublicServices
     }
     public static void UpdateList(int itemID, string category, string renameWord)
     {
-        // TODO: Add implementations
-
-        /*
-         * Assuming that ID feature is implemented:
-         * Get CheckmarkItem.ID, then match if similar to user input ID.
-         * 
-         * Get CheckmarkItem property according to "category" specified.
-         * These "category" should specify CheckmarkItem.Title, Checmarkitem.Priority.
-         * 
-         * Get category.
-         * Then change content.
-         * 
-         * foreach(CheckmarkItem item in list)
-         * if(itemID is item.ID && property is item.Property)
-         * {
-         *  item.Property = renameWord;
-         * }
-         */
         var list = ReadList();
 
         foreach(var item in list)
         {
-            if(itemID == item.ID && item.)
+            if(itemID == item.ID)
             {
-                var prop = JsonElement.TryGetProperty(category, renameWord);
+                item.TodoItem = renameWord;
+
+                switch (category)
+                {
+                    case "Priority":
+                        item.Priority
+                        break;
+                }
             }
         }
+    }
+    public static void UpdateList(int itemID, string category)
+    {
+        var list = ReadList();
 
-
+        foreach (var item in list)
+        {
+            if (itemID == item.ID)
+            {
+                switch(category)
+                {
+                    case "Priority":
+                        item.Priority
+                        break;
+                }
+            }
+        }
     }
     public static void DeleteList()
     {
